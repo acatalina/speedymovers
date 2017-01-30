@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font: inherit;
+  color: inherit;
+}
+
+html {
+  font: .75em Tahoma;
+  color: #303030;
+  box-sizing: border-box;
+  background: #f7f7f7;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 600px;
+}
+
+a { text-decoration: none; }
+
+.wrapper {
+  position: absolute;
+  width: 100%;
+}
+
+.calls {
+  position: fixed;
+  top: 0;
+  left: 2em;
+  background: #8BB0CC;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  font-size: 1em;
+  padding: 1em;
+}
+
+.tel {
+  display: block;
+  font-weight: bold;
+}
+
+.top {
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+}
+
+.split {
+  width: 100%;
+  height: 2em;
+  background: #303030;
+}
+
+.section {}
