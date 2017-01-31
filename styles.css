@@ -19,37 +19,59 @@ body {
   min-width: 600px;
 }
 
-.wrapper {
-  position: absolute;
-  width: 100%;
-}
-
-.calls {
-  position: fixed;
-  top: 0;
-  left: 2em;
-  background: #8AA9CF;
-  border-bottom-left-radius: 2em;
-  border-bottom-right-radius: 2em;
-  font-size: 1em;
-  padding: 1em;
-}
-
-.tel {
-  display: block;
-  font-weight: bold;
-}
-
 .top {
   background: #8aa9cf;
   width: 100%;
+  display: inline-block;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
 }
+/*
+.top::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+*/
+.logo {
+  width: 25%;
+  display: block;
+  margin: auto;
+}
 
-.logo { width: 25%; }
+.calls {
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  padding: 1em 2em 0 2em;
+  vertical-align: middle;
+}
+
+.callus {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.tels {
+  display: block;
+  text-align: center;
+}
+
+.tel {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.tel:not(:last-child)::after {
+  content: '|';
+  padding: 0 1em;
+}
 
 .split {
   width: 100%;
@@ -139,4 +161,14 @@ button {
   background: #8AA9CF;
   width: 100%;
   height: 2.5em;
+}
+
+@media only screen and (max-width: 320px) {
+
+.section {
+  display: block;
+  width: 80%;
+  margin: 2em auto;
+}
+
 }
