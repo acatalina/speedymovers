@@ -56,4 +56,24 @@ a { text-decoration: none; }
   background: #303030;
 }
 
-.section {}
+.content { text-align: center; }
+
+.section {
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+  vertical-align: top;
+}
+
+.title {
+  text-transform: uppercase;
+  background: #303030;
+  color: #f7f7f7;
+  font-size: 1.5em;
+  margin: 2em;
+  padding: 1em;
+}
+
+.footer {
+  text-align: center;
+}
