@@ -30,34 +30,19 @@ body {
   text-align: center;
   padding: 2em 2em .5em 2em;
   border-bottom: solid .2em #7a97ba;
-  -webkit-transition: height 0.3s;
-  -moz-transition: height 0.3s;
-  -ms-transition: height 0.3s;
-  -o-transition: height 0.3s;
-  transition: height 0.3s;
+  transition: width 1s, height 1s;
 }
 
 .logo {
   width: 25em;
   display: block;
   margin: auto;
-  -webkit-transition: height 0.3s;
-  -moz-transition: height 0.3s;
-  -ms-transition: height 0.3s;
-  -o-transition: height 0.3s;
-  transition: height 0.3s;
+  transition: width 1s, height 1s;
 }
 
 .smaller {
-  width: 50px;
-  height: 75px;
-  line-height: 75px;
-  font-size: 30px;
-  -webkit-transition: height 0.3s;
-  -moz-transition: height 0.3s;
-  -ms-transition: height 0.3s;
-  -o-transition: height 0.3s;
-  transition: height 0.3s;
+  width: 10em;
+  transition: width 1s, height 1s;
 }
 
 .menu {
