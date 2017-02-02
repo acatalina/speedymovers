@@ -1,6 +1,6 @@
 function init() {
   var logo = document.querySelector(".logo"),
-      shrinkOn = 300;
+      shrinkOn = 100;
 
   window.addEventListener('scroll', function() {
     var distanceY = window.pageYOffset || document.documentElement.scrollTop;
