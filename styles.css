@@ -49,10 +49,15 @@ body {
 }
 
 .smaller {
-  width: 150px;
-height: 75px;
-line-height: 75px;
-font-size: 30px;
+  width: 50px;
+  height: 75px;
+  line-height: 75px;
+  font-size: 30px;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s;
 }
 
 .menu {

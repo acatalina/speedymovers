@@ -1,19 +1,16 @@
-$(document).ready(function() {
-
-});
-
 function init() {
-    window.addEventListener('scroll', function(e){
-        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 300,
-            header = document.querySelector("header");
-        if (distanceY > shrinkOn) {
-            classie.add(header,"smaller");
-        } else {
-            if (classie.has(header,"smaller")) {
-                classie.remove(header,"smaller");
-            }
-        }
-    });
-}
-window.onload = init();
+  var logo = document.querySelector(".logo"),
+      shrinkOn = 300;
+
+  window.addEventListener('scroll', function() {
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+
+    if(distanceY > shrinkOn) {
+      logo.classList.add('smaller');
+    } else if(logo.classList.contains('smaller')) {
+      logo.classList.remove('smaller');
+    }
+  });
+};
+
+window.onload = init;
