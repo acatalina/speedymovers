@@ -16,7 +16,8 @@ html {
 body {
   margin: 0;
   width: 100%;
-  padding-top: 15em;
+  padding-top: 9.5em;
+  min-width: 320px;
 }
 
 .top {
@@ -28,13 +29,13 @@ body {
   overflow: hidden;
   width: 100%;
   text-align: center;
-  padding: 2em 2em .5em 2em;
+  padding: 1em;
   border-bottom: solid .2em #7a97ba;
   transition: width 1s, height 1s;
 }
 
 .logo {
-  width: 25em;
+  width: 20em;
   display: block;
   margin: auto;
   transition: width 1s, height 1s;
@@ -44,7 +45,7 @@ body {
   text-align: center;
   background: #8aa9cf;
   width: 100%;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .button {
@@ -52,7 +53,7 @@ body {
   text-transform: uppercase;
   padding: .2em .5em;
   margin: 0 .5em;
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: bold;
   text-decoration: none;
 }
@@ -117,15 +118,7 @@ body {
   width: 30%;
   margin: auto;
 }
-/*
-.form input,
-textarea,
-button {
-  width: 100%;
-  text-align: left;
-  display: block;
-}
-*/
+
 .footer {
   width: 100%;
   text-align: center;
@@ -137,26 +130,42 @@ button {
   height: 2.5em;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 768px) {
 
   body {
-    padding-top: 5em;
+    padding-top: 11em;
   }
 
   .logo {
-    width: 4.5em;
+    width: 22em;
   }
 
   .smaller {
-    width: 2.25em;
+    width: 12em;
   }
 
   .button {
-    font-size: 1em;
+    font-size: 1.75em;
   }
 
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (min-width: 1024px) {
+  
+  body {
+    padding-top: 16em;
+  }
+
+  .logo {
+    width: 35em;
+  }
+
+  .smaller {
+    width: 15em;
+  }
+
+  .button {
+    font-size: 2.25em
+  }
 
 }
