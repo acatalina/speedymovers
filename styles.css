@@ -74,7 +74,11 @@ body {
   text-align: center;
   vertical-align: top;
   margin: 2em 0;
+}
 
+.sectionwrap {
+  width: 100%;
+  position: relative;
 }
 
 .sectionimg {
@@ -82,11 +86,39 @@ body {
   border-radius: 0;
 }
 
-.info {
+.info ul {
   width: 100%;
-  height: 100%;
-  position: relative;
+  position: absolute;
+  top: 8em;
+  right: 2em;
+  transform: translateY(-50%);
+  display: block;
+  text-align: right;
+  line-height: 2em;
+  font-size: 1em;
+  margin-right: 1em;
+}
+
+.info li {
+  text-align: right;
+}
+
+.quote {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
+  display: block;
+  border: solid #547cad;
+  background: #547cad;
+  text-decoration: none;
+  padding: .5em;
+  border-radius: 2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: black;
+  transition: .3s;
 }
 
 .title {
