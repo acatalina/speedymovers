@@ -21,75 +21,55 @@ body {
 
 .top {
   background: #8aa9cf;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
   width: 100%;
-  display: inline-block;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em;
+  padding: 2em 2em .5em 2em;
+  border-bottom: solid .2em #7a97ba;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s;
 }
-/*
-.top::before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-*/
+
 .logo {
-  width: 30%;
+  width: 25em;
   display: block;
   margin: auto;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  -ms-transition: height 0.3s;
+  -o-transition: height 0.3s;
+  transition: height 0.3s;
 }
 
-.calls {
+.smaller {
+  width: 150px;
+height: 75px;
+line-height: 75px;
+font-size: 30px;
+}
+
+.menu {
+  text-align: center;
+  background: #8aa9cf;
   width: 100%;
-  text-align: center;
-  font-size: 1em;
-  padding: 1em 2em 0 2em;
-  vertical-align: middle;
+  margin-top: 2em;
 }
 
-.callus {
-  display: block;
-  text-align: center;
-  font-size: 2em;
+.button {
+  color: black;
   text-transform: uppercase;
-}
-
-.tels {
-  display: block;
-  text-align: center;
-}
-
-.tel {
-  display: inline-block;
+  padding: .2em .5em;
+  margin: 0 .5em;
+  font-size: 1.5em;
   font-weight: bold;
-  font-size: 2em;
-  vertical-align: middle;
-}
-
-.telsplit {
-  content: '';
-  display: inline-block;
-  background: #303030;
-  margin: 0 1em;
-  height: 2em;
-  width: .25em;
-  vertical-align: middle;
-}
-
-.split {
-  width: 100%;
-  padding: .75em 5em;
-  background: #303030;
-}
-
-.intro {
-  color: #f7f7f7;
-  margin: 0;
-  text-align: center;
-  text-transform: capitalize;
+  text-decoration: none;
 }
 
 .content {
@@ -99,9 +79,7 @@ body {
 }
 
 .section {
-  display: inline-block;
   text-align: center;
-  width: 30%;
   vertical-align: top;
   margin: 2em .5em;
 }
@@ -149,7 +127,7 @@ body {
   width: 30%;
   margin: auto;
 }
-
+/*
 .form input,
 textarea,
 button {
@@ -157,7 +135,7 @@ button {
   text-align: left;
   display: block;
 }
-
+*/
 .footer {
   width: 100%;
   text-align: center;
