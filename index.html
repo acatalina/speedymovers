@@ -37,18 +37,36 @@
     </div>
     <div class="section">
       <h2 class="title">storage</h2>
-      <img class="sectionimg" src="storage.png" />
-      <div class="arrowdown"></div>
-      <div class="info">
-
+      <div class="sectionwrap">
+        <img class="sectionimg" src="storage.png" />
+        <div class="info">
+          <ul>
+            <li>home &amp office</li>
+            <li>documents &amp small box</li>
+            <li>discounts for moving</li>
+            <li>based in the north west</li>
+            <li>prices from £1.50 per sq ft</li>
+          </ul>
+          <a class="quote" href="#">get a quote</a>
+        </div>
       </div>
     </div>
     <div class="section">
       <h2 class="title">courier</h2>
-      <img class="sectionimg" src="courier.png" />
-      <div class="arrowdown"></div>
-      <div class="info">
-
+      <div class="sectionwrap">
+        <img class="sectionimg" src="courier.png" />
+        <div class="info">
+          <ul>
+            <li>sameday nationwide</li>
+            <li>ebay collection and delivery</li>
+            <li>overnight deliveries</li>
+            <li>specialist deliveries
+              <span>i.e. auction houses</span>
+            </li>
+            <li>prices from 90p per mile</li>
+          </ul>
+          <a class="quote" href="#">get a quote</a>
+        </div>
       </div>
     </div>
   </div>
@@ -69,6 +87,29 @@
           <input type="text" name="name" placeholder="your name">
           <input type="email" name="email" placeholder="your email">
           <input type="tel" name="tel" placeholder="telephone">
+          <input class="movers, courier, hidden" type="postcode" name="postcodefrom">
+          <input class="movers, courier, hidden" type="postcode" name="postcodeto">
+          <input class="movers, hidden" type="number" name="nofbedrooms">
+          <input class="movers, courier, hidden" type="number" name="numberofitems">
+          <input class="generic, hidden" type="date" name="datefor">
+          <select class="storage, hidden">type of storage
+            <option value="home">home storage</option>
+            <option value="document">document storage</options>
+            <option value="commercial">commercial storage</option>
+          </select>
+          <select class="storage, hidden">size of unit
+            <option value="15">15 sq ft (walk in wardrobe)</option>
+            <option value="20">20 sq ft (2 telephone boxes)</option>
+            <option value="25">25 sq ft (standard garden shed)</option>
+            <option value="30">30 sq ft</option>
+            <option value="35">35 sq ft (studio flat contents)</option>
+            <option value="40">40 sq ft (large garden shed)</option>
+            <option value="50">50 sq ft (transit van / 1 bed flat contents)</option>
+            <option value="75">75 sq ft (luton van)</option>
+            <option value="100">100 sq ft (single garage / 2 bed home contents)</option>
+            <option value="125">125 sq ft (3 bed home contents)</option>
+            <option value="150">150 sq ft (7.5 tonne lorry)</option>
+          <select>
           <input type="text" name="subject" placeholder="subject">
           <textarea name="message" placeholder="your message"></textarea>
           <button type="submit">Send</button>
