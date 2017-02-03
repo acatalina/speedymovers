@@ -1,3 +1,5 @@
+// Reduce logo on scroll:
+
 function reduceLogoOnScroll() {
   var logo = document.querySelector('.logo'),
       shrinkOn = 200;
@@ -15,8 +17,12 @@ function reduceLogoOnScroll() {
 
 window.onload = reduceLogoOnScroll;
 
+// Form interaction:
+
 var contactorquote = document.querySelector('#contactorquote'),
-    whichspeedy = document.querySelector('#whichspeedy');
+    whichspeedy = document.querySelector('#whichspeedy'),
+    removals = document.querySelector('.movers'),
+    storage = document.querySelector('.storage');
 
 contactorquote.addEventListener('change', function() {
 	if(contactorquote.value === 'quote') {
@@ -25,6 +31,17 @@ contactorquote.addEventListener('change', function() {
     whichspeedy.classList.add('hidden');
   }
 });
+
+whichspeedy.addEventListener('change', function() {
+  if(whichspeedy.value === 'removals') {
+    removals.classList.remove('hidden');
+  } else if(whichspeedy.value === 'storage') {
+    storage.classList.remove('hidden');
+  }
+});
+
+
+// Menu scroll to:
 
 var removals = document.querySelector('#removals'),
     storage = document.querySelector('#storage'),
