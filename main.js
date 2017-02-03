@@ -1,6 +1,6 @@
 function reduceLogoOnScroll() {
   var logo = document.querySelector('.logo'),
-      shrinkOn = 50;
+      shrinkOn = 200;
 
   window.addEventListener('scroll', function() {
     var distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -15,8 +15,8 @@ function reduceLogoOnScroll() {
 
 window.onload = reduceLogoOnScroll;
 
-var contactorquote = document.querySelector('#contactorquote');
-var whichspeedy = document.querySelector('#whichspeedy');
+var contactorquote = document.querySelector('#contactorquote'),
+    whichspeedy = document.querySelector('#whichspeedy');
 
 contactorquote.addEventListener('change', function() {
 	if(contactorquote.value === 'quote') {
@@ -24,4 +24,12 @@ contactorquote.addEventListener('change', function() {
   } else if(contactorquote.value === 'contact') {
     whichspeedy.classList.add('hidden');
   }
+});
+
+var removals = document.querySelector('#removals'),
+    storage = document.querySelector('#storage'),
+    courier = document.querySelector('#courier');
+
+removals.addEventListener('click', function scrollTo() {
+  window.scrollTo(0, 0);
 });
