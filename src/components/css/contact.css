@@ -1,0 +1,54 @@
+.contact-tel {
+  background: #547cad;
+  padding: 1em;
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-size: 1.3em;
+  border-radius: 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.contact-links {
+  background: #547cad;
+  color: black;
+  padding: 1em;
+  display: inline-block;
+  margin: 0em 1em;
+  width: 30%;
+  text-decoration: none;
+  font-size: .8em;
+  border-radius: 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.contact-links span {
+  display: block;
+}
+
+.contact-speedy {
+  background: #f7f7f7;
+  padding: 1em;
+}
+
+.footer-contactdetails {
+  background: #8aa9cf;
+  border-top: solid .2em #547cad;
+  border-bottom: solid .2em #547cad;
+  padding: 1em;
+}
+
+.footer-contactdetails span {
+  display: block;
+  font-weight: 700;
+}
+
+.created {
+  background: #f7f7f7;
+  display: block;
+  padding: .5em;
+  margin: 0;
+}

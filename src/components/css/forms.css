@@ -1,0 +1,10 @@
+.forms {
+  background: #8aa9cf;
+  padding: 1em;
+  margin: auto;
+}
+
+.forms * {
+  width: 100%;
+  padding: 1em;
+}
