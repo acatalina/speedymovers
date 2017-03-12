@@ -23,37 +23,9 @@ var Movers = React.createClass({
             </li>
             <li>price match guarantee</li>
           </ul>
-          {this.moreInfoHandler()}
           <Quote />
-          <button className="quote" onClick={this.clickHandler}>More info</button>
         </div>
       </div>
-    );
-  },
-  clickHandler() {
-    this.setState({
-      classHidden: !this.state.classHidden
-    });
-  },
-  moreInfoHandler() {
-    if (this.state.classHidden) { return null; }
-    
-    return (
-      <Animate transitionName="appear-dissapear"
-        transitionAppearTimeout={1000} transitionEnterTimeout={1000} transitionLeaveTimeout={1000}
-        transitionAppear={true} transitionEnter={true} transitionLeave={true}>
-        
-        <ul className="section-info extra-info">
-          <li>residential &amp commercial</li>
-          <li>nationwide &amp european</li>
-          <li>packing &amp wrapping service</li>
-          <li>prices from £145*
-            <span>*one bed flat move within 20 miles</span>
-          </li>
-          <li>price match guarantee</li>
-        </ul>
-
-      </Animate>
     );
   }
 });
