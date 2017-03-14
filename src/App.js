@@ -1,6 +1,7 @@
 const React = require('react');
 const Form = require('./components/Form');
 const Section = require('./components/Section');
+const Quote = require('./components/Quote');
 const Contact = require('./components/Contact');
 const INFO = require('./INFO');
 require('./App.css');
@@ -42,6 +43,11 @@ var App = React.createClass({
         <main className="content-wrapper">
           <div className="sections-wrapper">
             {this.generateSections(this.state.info)}
+          </div>
+          <div className="sections-wrapper">
+            <Quote isHidden="quote-desktop" />
+            <Quote isHidden="quote-desktop"/>
+            <Quote isHidden="quote-desktop"/>
           </div>
           <Contact />
         </main>

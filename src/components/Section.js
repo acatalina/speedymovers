@@ -16,7 +16,7 @@ var Section = React.createClass({
           <ul className="section-info">
             {this.generateInfo(this.props.info)}
           </ul>
-          <Quote />
+          <Quote isHidden={'quote-phone'}/>
         </div>
       </div>
     );

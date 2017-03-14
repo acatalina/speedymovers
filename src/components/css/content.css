@@ -9,14 +9,8 @@
   margin: 0;
 }
 
-.section-content {
-  padding: 2em;
-  transition: 1s all ease;
-}
-
 .section-img {
   border-radius: 50%;
-  width: 80%;
   border: .05em solid #547cad;
 }
 
