@@ -5,10 +5,10 @@ function FormContact(props) {
 
   return (
     <div className="form">
-      <input type="text" name="name" placeholder="your name"></input>
-      <input type="email" name="email" placeholder="your email"></input>
-      <input type="tel" name="tel" placeholder="telephone"></input>
-      <textarea name="message" placeholder="your message"></textarea>
+      <input type="text" name="name" required="required" placeholder="your name"></input>
+      <input type="email" name="email" required="required" placeholder="your email"></input>
+      <input type="tel" name="tel" required="required" placeholder="telephone"></input>
+      <textarea name="message" required="required" placeholder="your message"></textarea>
     </div>
   );
 };

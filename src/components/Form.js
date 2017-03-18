@@ -45,20 +45,22 @@ var Form = React.createClass({
     );
   },
   formSelect(props) {
+    const defaultDate = new Date().toLocaleDateString().split('/').reverse().join('/');
+
     if (props.whichForm === "") return null;
 
     if (props.whichForm === "removals") {
       return (
-        <FormMovers />
+        <FormMovers defaultDate={defaultDate}/>
       );
     } else if (props.whichForm === "storage") {
       return (
-        <FormStorage />
+        <FormStorage defaultDate={defaultDate}/>
       );
     }
 
     return (
-      <FormCourier />
+      <FormCourier defaultDate={defaultDate}/>
     );
   },
   onChangeInfoHandler(event) {

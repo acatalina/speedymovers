@@ -1,12 +1,12 @@
 const React = require('react');
 
-function FormStorage() {
+function FormStorage(props) {
   return (
     <div className="form">
-      <input type="text" name="name" placeholder="your name"></input>
-      <input type="email" name="email" placeholder="your email"></input>
-      <input type="tel" name="tel" placeholder="telephone"></input>
-      <input type="date" name="datefor" placeholder="request date"></input>
+      <input type="text" name="name" required="required" placeholder="your name"></input>
+      <input type="email" name="email" required="required" placeholder="your email"></input>
+      <input type="tel" name="tel" required="required" placeholder="telephone"></input>
+      <input type="date" name="datefor" required="required" defaultValue={props.defaultValue} placeholder="request date"></input>
       <select>type of storage
         <option value="home">home storage</option>
         <option value="document">document storage</option>
@@ -25,7 +25,7 @@ function FormStorage() {
         <option value="125">125 sq ft (3 bed home contents)</option>
         <option value="150">150 sq ft (7.5 tonne lorry)</option>
       </select>
-      <textarea name="message" placeholder="your message"></textarea>
+      <textarea name="message" required="required" placeholder="your message"></textarea>
     </div>
   );
 }

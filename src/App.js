@@ -98,7 +98,6 @@ var App = React.createClass({
     });
   },
   quoteClickHandler(whichForm) {
-    console.log(whichForm);
     this.setState({ 
       contact: 'quote',
       whichForm: whichForm
