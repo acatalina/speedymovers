@@ -1,29 +1,19 @@
 const React = require('react');
-const Storage = require('./components/Storage');
-const Courier = require('./components/Courier');
 const Form = require('./components/Form');
-const Contact = require('./components/Contact');
 const Section = require('./components/Section');
-import logo from './logo.svg';
-import './App.css';
+const Quote = require('./components/Quote');
+const Contact = require('./components/Contact');
+const INFO = require('./INFO');
+require('./App.css');
+require('normalize.css');
 require('./components/css/content.css');
+require('font-awesome/css/font-awesome.css');
 
 var App = React.createClass({
   getInitialState() {
     return {
-      sections: ['removals', 'storage', 'couriers'],
       logoClass: 'speedy-logo',
-      info: {
-        removals: ['residential & commercial', 'nationwide & european',
-        'packing & wrapping service', 'prices from £145*', 
-        '*one bed flat move within 20 miles', 'price match guarantee'],
-        storage: ['residential & commercial', 'nationwide & european',
-        'packing & wrapping service', 'prices from £145*', 
-        '*one bed flat move within 20 miles', 'price match guarantee'],
-        courier: ['residential & commercial', 'nationwide & european',
-        'packing & wrapping service', 'prices from £145*', 
-        '*one bed flat move within 20 miles', 'price match guarantee']
-      }
+      info: INFO
     }
   },
   componentDidMount: function() {
@@ -33,7 +23,7 @@ var App = React.createClass({
     let shrinkOn = 300;
     let distanceY = window.pageYOffset || document.documentElement.scrollTop;
 
-      if(distanceY > shrinkOn) {
+      if (distanceY > shrinkOn) {
         this.setState({
           logoClass: 'speedy-logo-smaller'
         });
@@ -47,7 +37,7 @@ var App = React.createClass({
     return (
       <div className="App">
         <header className="speedy-header">
-          <img src={logo} alt="Speedy Movers" 
+          <img src="logo.svg" alt="Speedy Movers" 
             className={this.state.logoClass} 
             onScroll={this.handleScroll}
           />
@@ -55,6 +45,11 @@ var App = React.createClass({
         <main className="content-wrapper">
           <div className="sections-wrapper">
             {this.generateSections(this.state.info)}
+          </div>
+          <div className="sections-wrapper">
+            <Quote isHidden="quote-desktop" />
+            <Quote isHidden="quote-desktop"/>
+            <Quote isHidden="quote-desktop"/>
           </div>
           <Contact />
         </main>
@@ -64,6 +59,7 @@ var App = React.createClass({
             <span>Building 24a Hindley Business Centre</span>
             <span>Prospect Mill</span>
             <span>WN2 2PA</span>
+            <span>07923 953034</span>
             <span>speedystorage7@gmail.com</span>
           </div>
           <p className="created">Coded by <a href="https://github.com/acatalina">
@@ -73,7 +69,7 @@ var App = React.createClass({
     );
   },
   generateSections(state) {
-    return Object.keys(state).map(function(section, i) {
+    return state.sections.map(function(section, i) {
       return (
         <Section key={i} title={section} info={state[section]} />
       );

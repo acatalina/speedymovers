@@ -16,7 +16,12 @@ var Form = React.createClass({
       name: '',
       email: '',
       tel: '',
-      message: ''
+      message: '',
+      postCodeFrom: '',
+      postCodeTo: '',
+      noOfBedrooms: '',
+      numberOfItems: '',
+      dateFor: ''
     };
   },
   render() {
@@ -29,7 +34,7 @@ var Form = React.createClass({
         {FormContact(this.state.contactorquote)}
         {this.whichSpeedy(this.state.contactorquote)}
         {this.formSelect(this.state.whichForm)}
-        <button type="submit">Send</button>
+        <button className="form-button button" type="submit">Send</button>
       </form>
     );
   },
@@ -60,7 +65,7 @@ var Form = React.createClass({
   formSelect(state) {
     if (state === "") return null;
 
-    if (state === "movers") {
+    if (state === "removals") {
       return (
         <FormMovers />
       );
