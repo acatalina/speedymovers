@@ -26,7 +26,7 @@ var Form = React.createClass({
   },
   render() {
     return (
-      <form className="forms" onChange={this.onChangeInfoHandler} method="POST" action="http://formspree.io/ac.carrasco@gmail.com">
+      <form className="forms" onChange={this.onChangeInfoHandler} method="POST" action="https://formspree.io/ac.carrasco@gmail.com">
         <select onChange={this.contactOrQuoteHandler}>
           <option value="contact">I would like to contact Speedy Movers</option>
           <option value="quote">I would like a quote</option>
