@@ -7,6 +7,8 @@ import './css/forms.css';
 
 var Form = React.createClass({
   getInitialState() {
+    const defaultDate = new Date().toLocaleDateString().split('/').reverse().join('-');
+    
     return {
       name: '',
       email: '',
@@ -16,7 +18,7 @@ var Form = React.createClass({
       postCodeTo: '',
       noOfBedrooms: '',
       numberOfItems: '',
-      dateFor: ''
+      datefor: ''
     };
   },
   render() {
@@ -45,22 +47,20 @@ var Form = React.createClass({
     );
   },
   formSelect(props) {
-    const defaultDate = new Date().toLocaleDateString().split('/').reverse().join('/');
-
     if (props.whichForm === "") return null;
 
     if (props.whichForm === "removals") {
       return (
-        <FormMovers defaultDate={defaultDate}/>
+        <FormMovers />
       );
     } else if (props.whichForm === "storage") {
       return (
-        <FormStorage defaultDate={defaultDate}/>
+        <FormStorage />
       );
     }
 
     return (
-      <FormCourier defaultDate={defaultDate}/>
+      <FormCourier />
     );
   },
   onChangeInfoHandler(event) {

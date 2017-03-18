@@ -226,6 +226,10 @@ nav {
   margin-top: 0;
 }
 
+.date {
+  background-color: transparent;
+}
+
 /*-------------- */
 
 .footer {
