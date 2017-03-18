@@ -3,9 +3,12 @@ const React = require('react');
 var Quote = React.createClass({
   render() {
     return (
-      <button className={`quote button ${this.props.isHidden}`} href="#">
+      <a className={`quote button ${this.props.isHidden}`} 
+        onClick={this.props.quoteClickHandler}
+        href={`#contact`}
+      >
         get a quote
-      </button>
+      </a>
     );
   }
 });

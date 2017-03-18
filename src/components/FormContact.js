@@ -1,7 +1,7 @@
 const React = require('react');
 
-function FormContact(state) {
-  if (state === "quote") return null;
+function FormContact(props) {
+  if (props === "quote") return null;
 
   return (
     <div className="form">
@@ -11,7 +11,6 @@ function FormContact(state) {
       <textarea name="message" placeholder="your message"></textarea>
     </div>
   );
-}
-
+};
 
 module.exports = FormContact;

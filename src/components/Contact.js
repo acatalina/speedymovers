@@ -8,7 +8,11 @@ var Contact = React.createClass({
     return (
       <section className="contact">
       <ScrollableAnchor id="contact">
-        <Form />
+        <Form contact={this.props.contact} 
+          whichForm={this.props.whichForm}
+          contactHandler={this.props.contactHandler}
+          whichFormHandler={this.props.whichFormHandler}
+        />
       </ScrollableAnchor>
         <section className="contact-speedy">
           <a className="contact-tel button" href="tel:07923953034">

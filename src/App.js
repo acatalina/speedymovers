@@ -1,23 +1,24 @@
-const React = require('react');
-const Form = require('./components/Form');
-const Section = require('./components/Section');
-const Quote = require('./components/Quote');
-const Contact = require('./components/Contact');
-const INFO = require('./INFO');
+import React from 'react';
+import Section from './components/Section';
+import Quote from './components/Quote';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import INFO from './INFO';
 import {goToTop} from 'react-scrollable-anchor';
-require('./App.css');
-require('normalize.css');
-require('./components/css/content.css');
-require('font-awesome/css/font-awesome.css');
+import 'normalize.css';
+import './App.css';
+import 'font-awesome/css/font-awesome.css';
 
 var App = React.createClass({
   getInitialState() {
     return {
       logoClass: 'speedy-logo',
-      info: INFO
+      info: INFO,
+      contact: 'contact',
+      whichForm: '',
     }
   },
-  componentDidMount: function() {
+  componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   },
   handleScroll(event) {
@@ -57,28 +58,50 @@ var App = React.createClass({
             <Quote isHidden="quote-desktop"/>
             <Quote isHidden="quote-desktop"/>
           </div>
-          <Contact />
+          <Contact 
+            contact={this.state.contact} 
+            whichForm={this.state.whichForm}
+            contactHandler={this.contactHandler}
+            whichFormHandler={this.whichFormHandler}
+          />
         </main>
-        <footer className="footer">
-          <div className="footer-contactdetails">
-            <span>Speedy Movers</span>
-            <span>Building 24a Hindley Business Centre</span>
-            <span>Prospect Mill</span>
-            <span>WN2 2PA</span>
-            <span>07923 953034</span>
-            <span>speedystorage7@gmail.com</span>
-          </div>
-          <p className="created">Coded by <a href="https://github.com/acatalina">
-          Drasek</a></p>
-        </footer>
+        <Footer />
       </div>
     );
   },
   generateSections(state) {
-    return state.sections.map(function(section, i) {
+    return state.sections.map((section, i) => {
       return (
-        <Section key={i} title={section} info={state[section]} />
+        <Section key={i} title={section} 
+          info={state[section]} 
+          quoteClickHandler={this.quoteClickHandler}
+        />
       );
+    });
+  },
+  contactHandler(event) {
+    if (event.target.value === 'quote') {
+      this.setState({
+        contact: 'quote',
+        whichForm: 'removals'
+      });
+    } else {
+      this.setState({
+        contact: 'contact',
+        whichForm: ''
+      });
+    }
+  },
+  whichFormHandler(event) {
+    this.setState({
+      whichForm: event.target.value,
+    });
+  },
+  quoteClickHandler(whichForm) {
+    console.log(whichForm);
+    this.setState({ 
+      contact: 'quote',
+      whichForm: whichForm
     });
   }
 });

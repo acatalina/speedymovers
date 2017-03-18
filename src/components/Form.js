@@ -1,18 +1,13 @@
-const React = require('react');
-const Animate = require('react-addons-css-transition-group');
-const SelectWhich = require('./SelectWhich');
-const FormContact = require('./FormContact');
-const FormMovers = require('./FormMovers');
-const FormStorage = require('./FormStorage');
-const FormCourier = require('./FormCourier');
-// const Animate = require('react-addons-css-transition-group');
-require('./css/forms.css');
+import React from 'react';
+import FormContact from './FormContact';
+import FormMovers from './FormMovers';
+import FormStorage from './FormStorage';
+import FormCourier from './FormCourier';
+import './css/forms.css';
 
 var Form = React.createClass({
   getInitialState() {
     return {
-      contactorquote: 'contact',
-      whichForm: '',
       name: '',
       email: '',
       tel: '',
@@ -27,49 +22,36 @@ var Form = React.createClass({
   render() {
     return (
       <form className="forms" onChange={this.onChangeInfoHandler} method="POST" action="https://formspree.io/ac.carrasco@gmail.com">
-        <select onChange={this.contactOrQuoteHandler}>
+        <select onChange={this.props.contactHandler} value={this.props.contact}>
           <option value="contact">I would like to contact Speedy Movers</option>
           <option value="quote">I would like a quote</option>
         </select>
-        {FormContact(this.state.contactorquote)}
-        {this.whichSpeedy(this.state.contactorquote)}
-        {this.formSelect(this.state.whichForm)}
+        {FormContact(this.props.contact)}
+        {this.whichSpeedy(this.props)}
+        {this.formSelect(this.props)}
         <button className="form-button button" type="submit">Send</button>
       </form>
     );
   },
-  contactOrQuoteHandler(event) {
-    if (event.target.value === "quote") {
-      this.setState({
-        contactorquote: "quote",
-        whichForm: "removals"
-      });
-    } else {
-      this.setState({
-        contactorquote: "contact",
-        whichForm: ""
-      });
-    }
-  },
-  whichSpeedy(state) {
-    if (state === "contact") return null;
+  whichSpeedy(props) {
+    if (props.contact === "contact") return null;
 
     return (
-        <select onChange={this.onChangeWhichForm} className="whichspeedy">
+        <select onChange={props.whichFormHandler} className="whichspeedy" value={props.whichForm}>
           <option value="removals">from Speedy Removals</option>
           <option value="storage">from Speedy Storage</option>
           <option value="courier">from Speedy Couriers</option>
         </select>
     );
   },
-  formSelect(state) {
-    if (state === "") return null;
+  formSelect(props) {
+    if (props.whichForm === "") return null;
 
-    if (state === "removals") {
+    if (props.whichForm === "removals") {
       return (
         <FormMovers />
       );
-    } else if (state === "storage") {
+    } else if (props.whichForm === "storage") {
       return (
         <FormStorage />
       );
@@ -78,11 +60,6 @@ var Form = React.createClass({
     return (
       <FormCourier />
     );
-  },
-  onChangeWhichForm(event) {
-    this.setState({
-      whichForm: event.target.value,
-    });
   },
   onChangeInfoHandler(event) {
     let target = event.target.name;

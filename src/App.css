@@ -2,8 +2,11 @@
 *::before,
 *::after {
   box-sizing: inherit;
-  font: inherit;
+}
+
+* {
   color: inherit;
+  font-family: 'Comfortaa';
 }
 
 *:focus {
@@ -11,7 +14,6 @@
 }
 
 html {
-  font-family: 'Noto Sans', sans-serif;
   font-size: .75em;
   color: #303030;
   box-sizing: border-box;
@@ -46,7 +48,10 @@ body {
   transition: .3s;
 }
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none; 
+  cursor: pointer;
+}
 
 /* Header */
 
@@ -139,6 +144,10 @@ nav {
   display: block;
   font-size: .5em;
   margin: 0;
+}
+
+.quote {
+  margin: 0 5em;
 }
 
 .quote-desktop {
