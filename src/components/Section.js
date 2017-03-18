@@ -1,5 +1,8 @@
 const React = require('react');
 const Quote = require('./Quote');
+import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor';
+
+configureAnchors({offset: -88});
 
 var Section = React.createClass({
   getInitialState() {
@@ -10,7 +13,9 @@ var Section = React.createClass({
   render() {
     return (
       <div className="section">
-        <h2 className="section-title">{this.props.title}</h2>
+        <ScrollableAnchor id={this.props.title}>
+          <h2 className="section-title">{this.props.title}</h2>
+        </ScrollableAnchor>
         <div className="section-content">
           <img className="section-img" src={this.props.title + '.png'} alt="movers"/>
           <ul className="section-info">

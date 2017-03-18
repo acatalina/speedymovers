@@ -4,6 +4,7 @@ const Section = require('./components/Section');
 const Quote = require('./components/Quote');
 const Contact = require('./components/Contact');
 const INFO = require('./INFO');
+import {goToTop} from 'react-scrollable-anchor';
 require('./App.css');
 require('normalize.css');
 require('./components/css/content.css');
@@ -41,6 +42,11 @@ var App = React.createClass({
             className={this.state.logoClass} 
             onScroll={this.handleScroll}
           />
+          <nav>
+            <a className="nav-item" onClick={goToTop}>Movers</a>
+            <a className="nav-item" href="#storage">Storage</a>
+            <a className="nav-item" href="#courier">Courier</a>
+          </nav>
         </header>
         <main className="content-wrapper">
           <div className="sections-wrapper">

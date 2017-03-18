@@ -1,12 +1,15 @@
 const React = require('react');
 const Form = require('./Form');
+import ScrollableAnchor from 'react-scrollable-anchor';
 require('./css/contact.css')
 
 var Contact = React.createClass({
   render() {
     return (
       <section className="contact">
+      <ScrollableAnchor id="contact">
         <Form />
+      </ScrollableAnchor>
         <section className="contact-speedy">
           <a className="contact-tel button" href="tel:07923953034">
             <span>call us now</span>

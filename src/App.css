@@ -25,7 +25,7 @@ body {
 
 .App {
   text-align: center;
-  margin-top: 8.5em;
+  margin-top: 11em;
 }
 
 /* Generic classes */
@@ -39,13 +39,14 @@ body {
   font-size: 1.2em;
   font-weight: 700;
   text-transform: uppercase;
-  text-decoration: none;
   background: #547cad;
   border: .2em solid #e3e273;
   border-radius: 5em;
   box-shadow: 0px 5px 5px #888888;
   transition: .3s;
 }
+
+a { text-decoration: none; }
 
 /* Header */
 
@@ -74,11 +75,18 @@ body {
   transition: width 1s, height 1s;
 }
 
-.menu {
+nav {
   text-align: center;
   background: #8aa9cf;
   width: 100%;
   margin-top: 1em;
+}
+
+.nav-item {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  margin: .5em;
+  font-weight: 900;
 }
 
 /* Sections */
