@@ -2,7 +2,7 @@
   "name": "speedymovers-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://acatalina.github.io/speedy-movers",
+  "homepage": "https://acatalina.github.io",
   "dependencies": {
     "font-awesome": "^4.7.0",
     "normalize.css": "^5.0.0",
