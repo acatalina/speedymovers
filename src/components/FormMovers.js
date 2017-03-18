@@ -10,7 +10,7 @@ function FormMovers() {
       <input type="text" name="postCodeTo" placeholder="post code to"></input>
       <input type="number" name="nOfBedrooms" placeholder="number of bedrooms"></input>
       <input type="number" name="numberOfItems" placeholder="number of items"></input>
-      <input type="date" name="dateFor"></input>
+      <input type="date" name="dateFor" placeholder="request date"></input>
       <textarea name="message" placeholder="your message"></textarea>
     </div>
   );

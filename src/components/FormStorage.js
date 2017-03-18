@@ -6,7 +6,7 @@ function FormStorage() {
       <input type="text" name="name" placeholder="your name"></input>
       <input type="email" name="email" placeholder="your email"></input>
       <input type="tel" name="tel" placeholder="telephone"></input>
-      <input type="date" name="datefor"></input>
+      <input type="date" name="datefor" placeholder="request date"></input>
       <select>type of storage
         <option value="home">home storage</option>
         <option value="document">document storage</option>

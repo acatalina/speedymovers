@@ -9,7 +9,7 @@ function FormCourier() {
       <input type="postcode" name="postcodefrom" placeholder="post code from"></input>
       <input type="postcode" name="postcodeto" placeholder="post code to"></input>
       <input type="number" name="numberofitems" placeholder="number of items"></input>
-      <input type="date" name="datefor"></input>
+      <input type="date" name="datefor" placeholder="request date"></input>
       <textarea name="message" placeholder="your message"></textarea>
     </div>
   );
