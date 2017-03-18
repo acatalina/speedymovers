@@ -39,6 +39,7 @@ body {
   font-size: 1.2em;
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
   background: #547cad;
   border: .2em solid #e3e273;
   border-radius: 5em;
