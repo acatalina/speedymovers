@@ -34,7 +34,7 @@ var Form = React.createClass({
         {FormContact(this.state.contactorquote)}
         {this.whichSpeedy(this.state.contactorquote)}
         {this.formSelect(this.state.whichForm)}
-        <button type="submit">Send</button>
+        <button className="form-button button" type="submit">Send</button>
       </form>
     );
   },
