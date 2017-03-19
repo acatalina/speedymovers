@@ -9,9 +9,7 @@
   font-family: 'Comfortaa';
 }
 
-*:focus {
-  outline: 0;
-}
+*:focus { outline: 0; }
 
 html {
   font-size: .75em;
@@ -105,9 +103,7 @@ nav {
 
 /* Content.css */
 
-.section {
-  width: 100%;
-}
+.section { width: 100%; }
 
 .section-title {
   text-transform: uppercase;
@@ -139,9 +135,7 @@ nav {
   margin-bottom: 2em;
 }
 
-.section-info li {
-  list-style-type: none;
-}
+.section-info li { list-style-type: none; }
 
 .section-info li span {
   display: block;
@@ -149,13 +143,9 @@ nav {
   margin: 0;
 }
 
-.quote {
-  margin: 0 5em;
-}
+.quote { margin: 0 5em; }
 
-.quote-desktop {
-  display: none;
-}
+.quote-desktop { display: none; }
 
 /* Animations for extra section info below */
 /*
@@ -212,20 +202,18 @@ nav {
   font-family: 'Comfortaa';
 }
 
-.forms select,
-.forms select option {
+.form { padding: 0 1em; }
+
+.form select,
+.form select option {
   background-color: #8aa9cf;
   border: .2em solid #547cad;
   font-weight: 800;
 }
 
-.whichspeedy {
-  margin-top: .5em;
-}
+.whichspeedy { margin-top: .5em; }
 
-.form * {
-  margin: .5em 0;
-}
+.form * { margin: .5em 0; }
 
 .form-button {
   border-radius: 5em;
@@ -254,13 +242,9 @@ nav {
   width: 100%;
 }
 
-.button span {
-  margin-right: .5em;
-}
+.button span { margin-right: .5em; }
 
-.contact-tel-span {
-  display: none;
-}
+.contact-tel-span { display: none; }
 
 .footer-contactdetails {
   background: #8aa9cf;
@@ -284,37 +268,27 @@ nav {
 /* ----------------- */
 
 @media only screen and (min-width: 577px) {
-  .section-img {
-    width: 80%;
-  }
+  
+  .section-img { width: 80%; }
+
 }
 
 @media only screen and (min-width: 720px) {
 
-  .App {
-    margin-top: 9.2em;
-  }
+  .App { margin-top: 9.2em; }
 
-  .speedy-logo {
-    width: 22em;
-  }
+  .speedy-logo { width: 22em; }
 
-  .speedy-logo-smaller {
-    width: 12em;
-  }
+  .speedy-logo-smaller { width: 12em; }
 
-  nav {
-    display: none;
-  }
+  nav { display: none; }
 
   .sections-wrapper {
     flex-direction: row;
     flex-wrap: nowrap;
   }
 
-  .section-title {
-    font-size: 1.5em;
-  }
+  .section-title { font-size: 1.5em; }
 
   .section:nth-child(-n+2) {
     border-right: .01em solid #547cad;
@@ -331,18 +305,14 @@ nav {
     font-size: 1.1em;
   }
 
-  .section-img {
-    width: 15em;
-  }
+  .section-img { width: 15em; }
   
   .section-info {
     line-height: 1.8em;
     margin-bottom: 0;
   }
 
-  .quote-phone {
-    display: none;
-  }
+  .quote-phone { display: none; }
 
   .quote-desktop {
     display: flex;
@@ -350,43 +320,81 @@ nav {
     font-size: 1em;
   }
 
+  .form * { width: 33%; }
+
   .forms {
     padding: 2em 8em;
+    display: flex;
+    flex-flow: column;
   }
 
-  .button {
-    font-size: 1.2em;
+  .form {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+
+  .form * {
+    width: 40%;
+    margin: 1em;
+  }
+
+  .form textarea { width: 84%; }
+
+  .form-button { width: 50%; }
+
+  .button { font-size: 1.2em; }
 
   .contact-speedy {
     padding: 0 8em;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-tel {
+    width: 83%;
+    margin: 0;
+  }
+
+  .contact-tel span { display: initial; }
+
+  .contact-links-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+  }
+
+  .contact-links {
+    margin: 2em 4em;
   }
 }
 
 @media only screen and (min-width: 1024px) {
 
-  .App {
-    padding-top: 4.3em;
+  .App { padding-top: 5.8em; }
+
+  .speedy-logo { width: 40em; }
+
+  .speedy-logo-smaller { width: 20em; }
+
+  .section-title { font-size: 2em; }
+
+  .section-content { font-size: 1.4em; }
+
+  .button { font-size: 1.5em; }
+
+  .forms * { font-size: 1.2em; }
+
+  .form-button { font-size: 1.5em; }
+
+  .contact-tel {
+    width: 60%;
+    margin: auto;
   }
 
-  .speedy-logo {
-    width: 35em;
-  }
+  .footer-contactdetails { font-size: 1.4em; }
 
-  .speedy-logo-smaller {
-    width: 15em;
-  }
-
-  .button {
-    font-size: 1.5em
-  }
-
-  .content {
-    width: 100%;
-  }
-
-  .section {
-    display: inline-block;
-    width: 30%;
-  }
 }

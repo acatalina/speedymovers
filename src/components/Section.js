@@ -2,7 +2,7 @@ const React = require('react');
 const Quote = require('./Quote');
 import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor';
 
-configureAnchors({offset: -88});
+configureAnchors({offset: -86});
 
 var Section = React.createClass({
   getInitialState() {

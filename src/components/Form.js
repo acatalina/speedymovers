@@ -24,12 +24,14 @@ var Form = React.createClass({
       <form className="forms" onChange={this.onChangeInfoHandler} 
         method="POST" action="https://formspree.io/ac.carrasco@gmail.com"
       >
-        <select onChange={this.props.contactHandler} value={this.props.contact}>
-          <option value="contact">I would like to contact Speedy Movers</option>
-          <option value="quote">I would like a quote</option>
-        </select>
+        <div className="form">
+          <select onChange={this.props.contactHandler} value={this.props.contact}>
+            <option value="contact">I would like to contact Speedy Movers</option>
+            <option value="quote">I would like a quote</option>
+          </select>
+          {this.whichSpeedy(this.props)}
+        </div>
         {FormContact(this.props.contact)}
-        {this.whichSpeedy(this.props)}
         {this.formSelect(this.props)}
         <button className="form-button button" type="submit">Send</button>
       </form>
