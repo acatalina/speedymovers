@@ -147,43 +147,6 @@ nav {
 
 .quote-desktop { display: none; }
 
-/* Animations for extra section info below */
-/*
-.appear-dissapear-appear {
-  transform: translateY(-20%);
-  opacity: 0;
-}
-
-.appear-dissapear-appear.appear-dissapear-appear-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.appear-dissapear-enter {
-  transition: all 1s ease-in;
-  opacity: 0.01;
-}
-
-.appear-dissapear-enter.appear-dissapear-enter-active {
-  opacity: 1;
-  transition: all 1s ease-in;
-}
-
-.appear-dissapear-leave {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-
-.appear-dissapear-leave.appear-dissapear-leave-active {
-  
-  opacity: 0.01;
-  transition: all 1s ease-in;
-}*/
-
-/* ------------- */
-
-
 /* Forms.css */
 
 .forms {
@@ -270,7 +233,6 @@ nav {
 @media only screen and (min-width: 577px) {
   
   .section-img { width: 80%; }
-
 }
 
 @media only screen and (min-width: 720px) {
@@ -365,11 +327,10 @@ nav {
     width: 100%;
     display: flex;
     flex-flow: row;
+    justify-content: center;
   }
 
-  .contact-links {
-    margin: 2em 4em;
-  }
+  .contact-links { margin: 2em 4em; }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -396,5 +357,9 @@ nav {
   }
 
   .footer-contactdetails { font-size: 1.4em; }
+}
 
+@media only screen and (min-width: 1440px) {
+
+  .contact-links { width: 20%; }
 }
