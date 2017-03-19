@@ -7,8 +7,6 @@ import './css/forms.css';
 
 var Form = React.createClass({
   getInitialState() {
-    const defaultDate = new Date().toLocaleDateString().split('/').reverse().join('-');
-    
     return {
       name: '',
       email: '',
@@ -23,7 +21,9 @@ var Form = React.createClass({
   },
   render() {
     return (
-      <form className="forms" onChange={this.onChangeInfoHandler} method="POST" action="https://formspree.io/ac.carrasco@gmail.com">
+      <form className="forms" onChange={this.onChangeInfoHandler} 
+        method="POST" action="https://formspree.io/ac.carrasco@gmail.com"
+      >
         <select onChange={this.props.contactHandler} value={this.props.contact}>
           <option value="contact">I would like to contact Speedy Movers</option>
           <option value="quote">I would like a quote</option>
@@ -39,7 +39,9 @@ var Form = React.createClass({
     if (props.contact === "contact") return null;
 
     return (
-        <select onChange={props.whichFormHandler} className="whichspeedy" value={props.whichForm}>
+        <select onChange={props.whichFormHandler} 
+          className="whichspeedy" value={props.whichForm}
+        >
           <option value="removals">from Speedy Removals</option>
           <option value="storage">from Speedy Storage</option>
           <option value="courier">from Speedy Couriers</option>

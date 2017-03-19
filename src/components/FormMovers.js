@@ -10,7 +10,7 @@ function FormMovers(props) {
       <input type="text" name="postCodeTo" required="required" placeholder="post code to"></input>
       <input type="number" name="nOfBedrooms" required="required" placeholder="number of bedrooms"></input>
       <input type="number" name="numberOfItems" required="required" placeholder="number of items"></input>
-      <input type="date" name="dateFor" required="required" defaultValue={props.defaultValue} placeholder="request date"></input>
+      <input type="date" name="dateFor" required="required" placeholder="request date"></input>
       <textarea name="message" required="required" placeholder="your message"></textarea>
     </div>
   );

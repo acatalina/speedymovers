@@ -54,9 +54,7 @@ var App = React.createClass({
             {this.generateSections(this.state.info)}
           </div>
           <div className="sections-wrapper">
-            <Quote isHidden="quote-desktop" />
-            <Quote isHidden="quote-desktop"/>
-            <Quote isHidden="quote-desktop"/>
+            {this.generateQuoteDesktop(this.state.info.sections)}
           </div>
           <Contact 
             contact={this.state.contact} 
@@ -91,6 +89,17 @@ var App = React.createClass({
         whichForm: ''
       });
     }
+  },
+  generateQuoteDesktop (state) {
+    return state.map((section, i) => {
+      return (
+        <span key={i} className="section">
+          <Quote isHidden="quote-desktop" 
+            quoteClickHandler={this.quoteClickHandler.bind(null, section)}
+          />
+        </span>
+      );
+    });
   },
   whichFormHandler(event) {
     this.setState({

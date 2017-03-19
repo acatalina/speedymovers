@@ -1,7 +1,8 @@
 const React = require('react');
 const Form = require('./Form');
-import ScrollableAnchor from 'react-scrollable-anchor';
-require('./css/contact.css')
+import ScrollableAnchor,{configureAnchors} from 'react-scrollable-anchor';
+
+// configureAnchors({offset: -57});
 
 var Contact = React.createClass({
   render() {

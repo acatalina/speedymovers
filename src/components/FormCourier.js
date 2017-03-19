@@ -9,7 +9,7 @@ function FormCourier(props) {
       <input type="postcode" name="postcodefrom" required="required" placeholder="post code from" value={props.postCodeFrom}></input>
       <input type="postcode" name="postcodeto" required="required" placeholder="post code to" value={props.postCodeTo}></input>
       <input type="number" name="numberofitems" required="required" placeholder="number of items" value={props.numberOfItems}></input>
-      <input className="date" type="date" name="datefor" required="required" placeholder="request date" value={props.datefor}></input>
+      <input type="date" name="datefor" required="required" placeholder="request date" value={props.datefor}></input>
       <textarea name="message" required="required" placeholder="your message" value={props.message}></textarea>
     </div>
   );
