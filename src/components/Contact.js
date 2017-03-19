@@ -1,23 +1,21 @@
-const React = require('react');
-const Form = require('./Form');
+import React from 'react';
+import Form from'./Form';
 import ContactButtons from './ContactButtons';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
-var Contact = React.createClass({
-  render() {
-    return (
+const Contact = ((props) => {
+  return (
+    <ScrollableAnchor id="contact">
       <section className="contact">
-      <ScrollableAnchor id="contact">
-        <Form contact={this.props.contact} 
-          whichForm={this.props.whichForm}
-          contactHandler={this.props.contactHandler}
-          whichFormHandler={this.props.whichFormHandler}
+        <Form contact={props.contact} 
+          whichForm={props.whichForm}
+          contactHandler={props.contactHandler}
+          whichFormHandler={props.whichFormHandler}
         />
-      </ScrollableAnchor>
       <ContactButtons />
       </section>
-    );
-  }
+    </ScrollableAnchor>
+  );
 });
 
-module.exports = Contact;
+export default Contact;

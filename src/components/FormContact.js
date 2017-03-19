@@ -1,8 +1,6 @@
-const React = require('react');
+import React from 'react';
 
-function FormContact(props) {
-  if (props === "quote") return null;
-
+const FormContact = ((props) => {
   return (
     <div className="form">
       <input type="text" name="name" required="required" placeholder="your name"></input>
@@ -11,6 +9,6 @@ function FormContact(props) {
       <textarea name="message" required="required" placeholder="your message"></textarea>
     </div>
   );
-};
+});
 
-module.exports = FormContact;
+export default FormContact;

@@ -1,14 +1,13 @@
-const React = require('react');
+import React from 'react';
 
-const Quote = function(props) {
+const Quote = ((props) => {
   return (
     <a className={`quote button ${props.isHidden}`} 
       onClick={props.quoteClickHandler}
       href={`#contact`}
-    >
-      get a quote
+    >get a quote
     </a>
   );
-};
+});
 
-module.exports = Quote;
+export default Quote;

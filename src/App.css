@@ -44,9 +44,11 @@ body {
   border-radius: 5em;
   box-shadow: 0px 5px 5px #888888;
   transition: .3s;
+  cursor: pointer;
 }
 
-a { 
+a, 
+select { 
   text-decoration: none; 
   cursor: pointer;
 }
@@ -282,12 +284,16 @@ nav {
     font-size: 1em;
   }
 
-  .form * { width: 33%; }
 
   .forms {
     padding: 2em 8em;
     display: flex;
     flex-flow: column;
+  }
+  
+  .form * { 
+    width: 40%; 
+    margin: 1em;
   }
 
   .form {
@@ -295,11 +301,6 @@ nav {
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .form * {
-    width: 40%;
-    margin: 1em;
   }
 
   .form textarea { width: 84%; }

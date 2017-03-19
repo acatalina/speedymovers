@@ -1,13 +1,14 @@
-import React from 'react';
+import React,{Component} from 'react';
 import FormContact from './FormContact';
 import FormMovers from './FormMovers';
 import FormStorage from './FormStorage';
 import FormCourier from './FormCourier';
-import './css/forms.css';
 
-var Form = React.createClass({
-  getInitialState() {
-    return {
+class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       name: '',
       email: '',
       tel: '',
@@ -17,8 +18,12 @@ var Form = React.createClass({
       noOfBedrooms: '',
       numberOfItems: '',
       datefor: ''
-    };
-  },
+    }
+
+    this.whichSpeedy = this.whichSpeedy.bind(this);
+    this.formSelect = this.formSelect.bind(this);
+    this.onChangeInfoHandler = this.onChangeInfoHandler.bind(this);
+  }
   render() {
     return (
       <form className="forms" onChange={this.onChangeInfoHandler} 
@@ -31,42 +36,44 @@ var Form = React.createClass({
           </select>
           {this.whichSpeedy(this.props)}
         </div>
-        {FormContact(this.props.contact)}
         {this.formSelect(this.props)}
         <button className="form-button button" type="submit">Send</button>
       </form>
     );
-  },
+  }
   whichSpeedy(props) {
-    if (props.contact === "contact") return null;
-
+    if (props.contact === 'contact') return null;
+      
     return (
-        <select onChange={props.whichFormHandler} 
-          className="whichspeedy" value={props.whichForm}
-        >
-          <option value="removals">from Speedy Removals</option>
-          <option value="storage">from Speedy Storage</option>
-          <option value="courier">from Speedy Couriers</option>
-        </select>
+      <select onChange={props.whichFormHandler} 
+        className="whichspeedy" value={props.whichForm}
+      >
+        <option value="removals">from Speedy Removals</option>
+        <option value="storage">from Speedy Storage</option>
+        <option value="courier">from Speedy Couriers</option>
+      </select>
     );
-  },
+  }
   formSelect(props) {
-    if (props.whichForm === "") return null;
-
-    if (props.whichForm === "removals") {
-      return (
-        <FormMovers />
-      );
-    } else if (props.whichForm === "storage") {
-      return (
-        <FormStorage />
-      );
+    switch (props.whichForm) {
+      case "removals":
+        return (
+          <FormMovers />
+        );
+      case "storage":
+        return (
+          <FormStorage />
+        );
+      case "courier":
+        return (
+          <FormCourier />
+        );
+      default:
+        return (
+          <FormContact />
+        );
     }
-
-    return (
-      <FormCourier />
-    );
-  },
+  }
   onChangeInfoHandler(event) {
     let target = event.target.name;
     
@@ -74,6 +81,6 @@ var Form = React.createClass({
       [target]: event.target.value
     });
   }
-});
+};
 
-module.exports = Form;
+export default Form;

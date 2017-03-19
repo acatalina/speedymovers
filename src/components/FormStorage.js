@@ -1,12 +1,20 @@
-const React = require('react');
+import React from 'react';
 
-function FormStorage(props) {
+const FormStorage = ((props) => {
   return (
     <div className="form">
-      <input type="text" name="name" required="required" placeholder="your name"></input>
-      <input type="email" name="email" required="required" placeholder="your email"></input>
-      <input type="tel" name="tel" required="required" placeholder="telephone"></input>
-      <input type="date" name="datefor" required="required" defaultValue={props.defaultValue} placeholder="request date"></input>
+      <input type="text" name="name" required="required" 
+        placeholder="your name">
+      </input>
+      <input type="email" name="email" required="required" 
+        placeholder="your email">
+      </input>
+      <input type="tel" name="tel" required="required" 
+        placeholder="telephone">
+      </input>
+      <input type="date" name="datefor" required="required" defaultValue={props.defaultValue}
+        placeholder="request date">
+      </input>
       <select>type of storage
         <option value="home">home storage</option>
         <option value="document">document storage</option>
@@ -28,6 +36,6 @@ function FormStorage(props) {
       <textarea name="message" required="required" placeholder="your message"></textarea>
     </div>
   );
-}
+});
 
-module.exports = FormStorage;
+export default FormStorage;
