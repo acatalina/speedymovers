@@ -11,7 +11,7 @@ const Section = ((props) => {
         <h2 className="section-title">{props.title}</h2>
       </ScrollableAnchor>
       <div className="section-content">
-        <img className="section-img" src={props.title + '.png'} alt={props.title}/>
+        <img className="section-img" src={props.title + '.jpg'} alt={props.title}/>
         <ul className="section-info">
           {generateInfo(props.info)}
         </ul>
