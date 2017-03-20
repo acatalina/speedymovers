@@ -1,18 +1,26 @@
-const React = require('react');
+import React from 'react';
 
-function FormStorage() {
+const FormStorage = ((props) => {
   return (
     <div className="form">
-      <input type="text" name="name" placeholder="your name"></input>
-      <input type="email" name="email" placeholder="your email"></input>
-      <input type="tel" name="tel" placeholder="telephone"></input>
-      <input type="date" name="datefor"></input>
-      <select>type of storage
+      <input type="text" name="name" required="required" 
+          placeholder="your name" value={props.name}>
+      </input>
+      <input type="email" name="email" required="required" 
+        placeholder="your email" value={props.email}>
+      </input>
+      <input type="tel" name="tel" required="required" 
+        placeholder="telephone" value={props.tel}>
+      </input>
+      <input type="date" name="datefor" required="required"
+        placeholder="request date" value={props.dateFor}>
+      </input>
+      <select name="typeOfStorage" value={props.typeofStorage}>type of storage
         <option value="home">home storage</option>
         <option value="document">document storage</option>
         <option value="commercial">commercial storage</option>
       </select>
-      <select>size of unit
+      <select name="sizeOfUnit" value={props.sizeOfUnit}>size of unit
         <option value="15">15 sq ft (walk in wardrobe)</option>
         <option value="20">20 sq ft (2 telephone boxes)</option>
         <option value="25">25 sq ft (standard garden shed)</option>
@@ -25,9 +33,11 @@ function FormStorage() {
         <option value="125">125 sq ft (3 bed home contents)</option>
         <option value="150">150 sq ft (7.5 tonne lorry)</option>
       </select>
-      <textarea name="message" placeholder="your message"></textarea>
+      <textarea name="message" required="required" 
+        placeholder="your message" value={props.message}>
+      </textarea>
     </div>
   );
-}
+});
 
-module.exports = FormStorage;
+export default FormStorage;

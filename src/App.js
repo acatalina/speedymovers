@@ -1,39 +1,56 @@
-const React = require('react');
-const Storage = require('./components/Storage');
-const Courier = require('./components/Courier');
-const Form = require('./components/Form');
-const Contact = require('./components/Contact');
-const Section = require('./components/Section');
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import INFO from './INFO';
+import 'normalize.css';
+import 'font-awesome/css/font-awesome.css';
 import './App.css';
-require('./components/css/content.css');
 
-var App = React.createClass({
-  getInitialState() {
-    return {
-      sections: ['removals', 'storage', 'couriers'],
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       logoClass: 'speedy-logo',
-      info: {
-        removals: ['residential & commercial', 'nationwide & european',
-        'packing & wrapping service', 'prices from £145*', 
-        '*one bed flat move within 20 miles', 'price match guarantee'],
-        storage: ['residential & commercial', 'nationwide & european',
-        'packing & wrapping service', 'prices from £145*', 
-        '*one bed flat move within 20 miles', 'price match guarantee'],
-        courier: ['residential & commercial', 'nationwide & european',
-        'packing & wrapping service', 'prices from £145*', 
-        '*one bed flat move within 20 miles', 'price match guarantee']
-      }
+      info: INFO,
+      contact: 'contact',
+      whichForm: ''
     }
-  },
-  componentDidMount: function() {
+
+    this.handleScroll = this.handleScroll.bind(this);
+    this.quoteClickHandler = this.quoteClickHandler.bind(this);
+    this.contactHandler = this.contactHandler.bind(this);
+    this.whichFormHandler = this.whichFormHandler.bind(this);
+  }
+  componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-  },
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header 
+          logoClass={this.state.logoClass}
+          handleScroll={this.handleScroll}
+        />
+        <Main 
+          info={this.state.info} 
+          sections={this.state.info.sections}
+          contact={this.state.contact} 
+          whichForm={this.state.whichForm}
+          contactHandler={this.contactHandler}
+          whichFormHandler={this.whichFormHandler}
+          quoteClickHandler={this.quoteClickHandler}
+        />
+        <Footer />
+      </div>
+    );
+  }
   handleScroll(event) {
     let shrinkOn = 300;
     let distanceY = window.pageYOffset || document.documentElement.scrollTop;
 
-      if(distanceY > shrinkOn) {
+      if (distanceY > shrinkOn) {
         this.setState({
           logoClass: 'speedy-logo-smaller'
         });
@@ -42,43 +59,31 @@ var App = React.createClass({
           logoClass: 'speedy-logo'
         });
       }
-  },
-  render() {
-    return (
-      <div className="App">
-        <header className="speedy-header">
-          <img src={logo} alt="Speedy Movers" 
-            className={this.state.logoClass} 
-            onScroll={this.handleScroll}
-          />
-        </header>
-        <main className="content-wrapper">
-          <div className="sections-wrapper">
-            {this.generateSections(this.state.info)}
-          </div>
-          <Contact />
-        </main>
-        <footer className="footer">
-          <div className="footer-contactdetails">
-            <span>Speedy Movers</span>
-            <span>Building 24a Hindley Business Centre</span>
-            <span>Prospect Mill</span>
-            <span>WN2 2PA</span>
-            <span>speedystorage7@gmail.com</span>
-          </div>
-          <p className="created">Coded by <a href="https://github.com/acatalina">
-          Drasek</a></p>
-        </footer>
-      </div>
-    );
-  },
-  generateSections(state) {
-    return Object.keys(state).map(function(section, i) {
-      return (
-        <Section key={i} title={section} info={state[section]} />
-      );
+  }
+  contactHandler(event) {
+    if (event.target.value === 'quote') {
+      this.setState({
+        contact: 'quote',
+        whichForm: 'removals'
+      });
+    } else {
+      this.setState({
+        contact: 'contact',
+        whichForm: ''
+      });
+    }
+  }
+  whichFormHandler(event) {
+    this.setState({
+      whichForm: event.target.value,
     });
   }
-});
+  quoteClickHandler(whichForm) {
+    this.setState({ 
+      contact: 'quote',
+      whichForm: whichForm
+    });
+  }
+};
 
 export default App;

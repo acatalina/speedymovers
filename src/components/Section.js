@@ -1,62 +1,39 @@
-const React = require('react');
-const Quote = require('./Quote');
-const Animate = require('react-addons-css-transition-group');
+import React from 'react';
+import Quote from './Quote';
+import ScrollableAnchor, {configureAnchors} from 'react-scrollable-anchor';
 
-var Section = React.createClass({
-  getInitialState() {
-    return {
-      classHidden: true
-    }
-  },
-  render() {
-    return (
-      <div className="section">
-        <h2 className="section-title">{this.props.title}</h2>
-        <div className="section-content">
-          <img className="section-img" src={this.props.title + '.png'} alt="movers"/>
-          <ul className="section-info">
-            {this.generateInfo()}
-          </ul>
-          {this.generateInfo(this.props.info)}
-          <Quote />
-          <button className="quote" onClick={this.clickHandler}>More info</button>
-        </div>
-      </div>
-    );
-  },
-  clickHandler() {
-    this.setState({
-      classHidden: !this.state.classHidden
-    });
-  },
-  moreInfoHandler() {
-    if (this.state.classHidden) { return null; }
-    
-    return (
-      <Animate transitionName="appear-dissapear"
-        transitionAppearTimeout={1000} transitionEnterTimeout={1000} transitionLeaveTimeout={1000}
-        transitionAppear={true} transitionEnter={true} transitionLeave={true}>
-        
-        <ul className="section-info extra-info">
-          <li>residential &amp commercial</li>
-          <li>nationwide &amp european</li>
-          <li>packing &amp wrapping service</li>
-          <li>prices from £145*
-            <span>*one bed flat move within 20 miles</span>
-          </li>
-          <li>price match guarantee</li>
+configureAnchors({offset: -86});
+
+const Section = ((props) => {
+  return (
+    <div className="section">
+      <ScrollableAnchor id={props.title}>
+        <h2 className="section-title">{props.title}</h2>
+      </ScrollableAnchor>
+      <div className="section-content">
+        <img className="section-img" src={props.title + '.jpg'} alt={props.title}/>
+        <ul className="section-info">
+          {generateInfo(props.info)}
         </ul>
-
-      </Animate>
-    );
-  },
-  generateInfo(info) {
-    return info.map(function(elem) {
-      return (
-        <li>{elem}</li>
-      );
-    });
-  }
+        <Quote quoteClickHandler={props.quoteClickHandler.bind(null, props.title)} 
+          isHidden={'quote-phone'}
+        />
+      </div>
+    </div>
+  );
 });
 
-module.exports = Section;
+function generateInfo(info) {
+  return info.map((elem, i) => {
+    if (Array.isArray(elem)) {
+      return (
+        <li key={i}>{elem[0]}<span>{elem[1]}</span></li>  
+      );
+    }
+    return (
+      <li key={i}>{elem}</li>
+    );
+  });
+}
+
+export default Section;

@@ -2,12 +2,16 @@
 *::before,
 *::after {
   box-sizing: inherit;
-  font: inherit;
-  color: inherit;
 }
 
+* {
+  color: inherit;
+  font-family: 'Comfortaa';
+}
+
+*:focus { outline: 0; }
+
 html {
-  font-family: 'Noto Sans', sans-serif;
   font-size: .75em;
   color: #303030;
   box-sizing: border-box;
@@ -16,15 +20,40 @@ html {
 
 body {
   margin: 0;
-  width: 100%;
-  padding-top: 9.2em;
   min-width: 320px;
 }
 
 .App {
   text-align: center;
-  margin-top: 8.5em;
+  margin-top: 11em;
 }
+
+/* Generic classes */
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .7em;
+  margin: 1em auto;
+  font-size: 1.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #547cad;
+  border: .2em solid #e3e273;
+  border-radius: 5em;
+  box-shadow: 0px 5px 5px #888888;
+  transition: .3s;
+  cursor: pointer;
+}
+
+a, 
+select { 
+  text-decoration: none; 
+  cursor: pointer;
+}
+
+/* Header */
 
 .speedy-header {
   background: #8aa9cf;
@@ -34,7 +63,6 @@ body {
   z-index: 999;
   overflow: hidden;
   width: 100%;
-  text-align: center;
   padding: 1em;
   border-bottom: solid .2em #547cad;
   transition: width 1s, height 1s;
@@ -52,99 +80,287 @@ body {
   transition: width 1s, height 1s;
 }
 
-.menu {
+nav {
   text-align: center;
   background: #8aa9cf;
   width: 100%;
   margin-top: 1em;
 }
 
-.button {
-  color: black;
+.nav-item {
+  font-size: 1.3em;
   text-transform: uppercase;
-  padding: .2em .5em;
-  margin: 0 .5em;
-  font-size: 1.1em;
-  font-weight: 700;
-  text-decoration: none;
+  margin: .5em;
+  font-weight: 900;
 }
 
-.footer {
+/* Sections */
+
+.sections-wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Content.css */
+
+.section { width: 100%; }
+
+.section-title {
+  text-transform: uppercase;
+  background: #e3e273;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 1.1em;
+  padding: .5em;
+  margin: 0;
+}
+
+.section-content {
+  padding: 2em;
+  transition: 1s all ease;
+}
+
+.section-img {
+  border-radius: 50%;
+  border: .05em solid #547cad;
+  width: 80%;
+}
+
+.section-info {
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-left: 0;
+  margin-bottom: 2em;
+}
+
+.section-info li { list-style-type: none; }
+
+.section-info li span {
+  display: block;
+  font-size: .5em;
+  margin: 0;
+}
+
+.quote { margin: 0 5em; }
+
+.quote-desktop { display: none; }
+
+/* Forms.css */
+
+.forms {
+  background: #8aa9cf;
+  padding: 1em;
+  margin: auto;
   border-top: solid .2em #547cad;
+  border-bottom: solid .2em #547cad;
+}
+
+.forms * {
+  border-radius: .5em;
+  width: 100%;
+  padding: 1em;
+  text-transform: uppercase;
+  font-family: 'Comfortaa';
+}
+
+.form { padding: 0 1em; }
+
+.form select,
+.form select option {
+  background-color: #8aa9cf;
+  border: .2em solid #547cad;
+  font-weight: 800;
+}
+
+.whichspeedy { margin-top: .5em; }
+
+.form * { margin: .5em 0; }
+
+.form-button {
+  border-radius: 5em;
+  margin-top: 0;
+}
+
+/*-------------- */
+
+.footer {
   background: #8aa9cf;
   width: 100%;
   text-align: center;
 }
 
-@media only screen and (min-width: 426px) {
+/* Contact.css */
 
-  .section-img {
-    width: 60%;
-  }
+.contact-speedy {
+  background: #f7f7f7;
+  margin: 2em 0;
+  padding: 0 1em;
+}
 
+.contact-tel,
+.contact-links {
+  text-align: center;
+  width: 100%;
+}
+
+.button span { margin-right: .5em; }
+
+.contact-tel-span { display: none; }
+
+.footer-contactdetails {
+  background: #8aa9cf;
+  border-top: solid .2em #547cad;
+  border-bottom: solid .2em #547cad;
+  padding: 1em;
+}
+
+.footer-contactdetails span {
+  display: block;
+  font-weight: 700;
+}
+
+.created {
+  background: #f7f7f7;
+  display: block;
+  padding: .5em;
+  margin: 0;
+}
+
+/* ----------------- */
+
+@media only screen and (min-width: 577px) {
+  
+  .section-img { width: 80%; }
 }
 
 @media only screen and (min-width: 720px) {
 
-  body {
-    padding-top: 11em;
-  }
+  .App { margin-top: 9.2em; }
 
-  .logo {
-    width: 22em;
-  }
+  .speedy-logo { width: 22em; }
 
-  .smaller {
-    width: 12em;
-  }
+  .speedy-logo-smaller { width: 12em; }
 
-  .button {
-    font-size: 1.75em;
-  }
+  nav { display: none; }
 
   .sections-wrapper {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .section-title { font-size: 1.5em; }
+
+  .section:nth-child(-n+2) {
+    border-right: .01em solid #547cad;
+  }
+
+  .section {
+    width: 33%;
+    flex-grow: 1;
+  }
+
+  .section-content {
+    padding-bottom: 0;
+    line-height: 4em;
+    font-size: 1.1em;
+  }
+
+  .section-img { width: 15em; }
+  
+  .section-info {
+    line-height: 1.8em;
+    margin-bottom: 0;
+  }
+
+  .quote-phone { display: none; }
+
+  .quote-desktop {
     display: flex;
-    align-items: baseline;
+    margin: 1em 3em;
+    font-size: 1em;
   }
 
-  .section { 
-    flex-grow: 0;
+
+  .forms {
+    padding: 2em 8em;
+    display: flex;
+    flex-flow: column;
+  }
+  
+  .form * { 
+    width: 40%; 
+    margin: 1em;
   }
 
-  .section-img {
-    
+  .form {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .footer {
- 
+  .form textarea { width: 84%; }
+
+  .form-button { width: 50%; }
+
+  .button { font-size: 1.2em; }
+
+  .contact-speedy {
+    padding: 0 8em;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
+  .contact-tel {
+    width: 83%;
+    margin: 0;
+  }
+
+  .contact-tel span { display: initial; }
+
+  .contact-links-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  .contact-links { margin: 2em 4em; }
 }
 
 @media only screen and (min-width: 1024px) {
 
-  body {
-    padding-top: 16em;
+  .App { padding-top: 5.8em; }
+
+  .speedy-logo { width: 40em; }
+
+  .speedy-logo-smaller { width: 20em; }
+
+  .section-title { font-size: 2em; }
+
+  .section-content { font-size: 1.4em; }
+
+  .button { font-size: 1.5em; }
+
+  .forms * { font-size: 1.2em; }
+
+  .form-button { font-size: 1.5em; }
+
+  .contact-tel {
+    width: 60%;
+    margin: auto;
   }
 
-  .logo {
-    width: 35em;
-  }
+  .footer-contactdetails { font-size: 1.4em; }
+}
 
-  .smaller {
-    width: 15em;
-  }
+@media only screen and (min-width: 1440px) {
 
-  .button {
-    font-size: 2.25em
-  }
-
-  .content {
-    width: 100%;
-  }
-
-  .section {
-    display: inline-block;
-    width: 30%;
-  }
+  .contact-links { width: 20%; }
 }

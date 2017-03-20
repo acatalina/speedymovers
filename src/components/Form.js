@@ -1,91 +1,90 @@
-const React = require('react');
-const Animate = require('react-addons-css-transition-group');
-const SelectWhich = require('./SelectWhich');
-const FormContact = require('./FormContact');
-const FormMovers = require('./FormMovers');
-const FormStorage = require('./FormStorage');
-const FormCourier = require('./FormCourier');
-// const Animate = require('react-addons-css-transition-group');
-require('./css/forms.css');
+import React,{Component} from 'react';
+import FormContact from './FormContact';
+import FormMovers from './FormMovers';
+import FormStorage from './FormStorage';
+import FormCourier from './FormCourier';
 
-var Form = React.createClass({
-  getInitialState() {
-    return {
-      contactorquote: 'contact',
-      whichForm: '',
+class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       name: '',
       email: '',
       tel: '',
-      message: ''
-    };
-  },
+      message: '',
+      postCodeFrom: '',
+      postCodeTo: '',
+      nOfBedrooms: '',
+      nOfItems: '',
+      dateFor: '',
+      sizeOfUnit: '15',
+      typeOfStorage: 'home'
+    }
+
+    this.whichSpeedy = this.whichSpeedy.bind(this);
+    this.formSelect = this.formSelect.bind(this);
+    this.onChangeInfoHandler = this.onChangeInfoHandler.bind(this);
+  }
   render() {
     return (
-      <form className="forms" onChange={this.onChangeInfoHandler} method="POST" action="http://formspree.io/ac.carrasco@gmail.com">
-        <select onChange={this.contactOrQuoteHandler}>
-          <option value="contact">I would like to contact Speedy Movers</option>
-          <option value="quote">I would like a quote</option>
-        </select>
-        {FormContact(this.state.contactorquote)}
-        {this.whichSpeedy(this.state.contactorquote)}
-        {this.formSelect(this.state.whichForm)}
-        <button type="submit">Send</button>
+      <form className="forms" onChange={this.onChangeInfoHandler} 
+        method="POST" action="https://formspree.io/speedystorage7@gmail.com"
+      >
+        <div className="form">
+          <select onChange={this.props.contactHandler} value={this.props.contact}>
+            <option value="contact">I would like to contact Speedy Movers</option>
+            <option value="quote">I would like a quote</option>
+          </select>
+          {this.whichSpeedy(this.props)}
+        </div>
+        {this.formSelect(this.props)}
+        <input className="form-button button" type="submit" value="send"></input>
       </form>
     );
-  },
-  contactOrQuoteHandler(event) {
-    if (event.target.value === "quote") {
-      this.setState({
-        contactorquote: "quote",
-        whichForm: "removals"
-      });
-    } else {
-      this.setState({
-        contactorquote: "contact",
-        whichForm: ""
-      });
-    }
-  },
-  whichSpeedy(state) {
-    if (state === "contact") return null;
-
+  }
+  whichSpeedy(props) {
+    if (props.contact === 'contact') return null;
+      
     return (
-        <select onChange={this.onChangeWhichForm} className="whichspeedy">
-          <option value="removals">from Speedy Removals</option>
-          <option value="storage">from Speedy Storage</option>
-          <option value="courier">from Speedy Couriers</option>
-        </select>
+      <select onChange={props.whichFormHandler} 
+        className="whichspeedy" value={props.whichForm}
+      >
+        <option value="removals">from Speedy Removals</option>
+        <option value="storage">from Speedy Storage</option>
+        <option value="courier">from Speedy Couriers</option>
+      </select>
     );
-  },
-  formSelect(state) {
-    if (state === "") return null;
-
-    if (state === "movers") {
-      return (
-        <FormMovers />
-      );
-    } else if (state === "storage") {
-      return (
-        <FormStorage />
-      );
+  }
+  formSelect(props) {
+    switch (props.whichForm) {
+      case "removals":
+        return (
+          <FormMovers />
+        );
+      case "storage":
+        return (
+          <FormStorage />
+        );
+      case "courier":
+        return (
+          <FormCourier />
+        );
+      default:
+        return (
+          <FormContact />
+        );
     }
-
-    return (
-      <FormCourier />
-    );
-  },
-  onChangeWhichForm(event) {
-    this.setState({
-      whichForm: event.target.value,
-    });
-  },
+  }
   onChangeInfoHandler(event) {
+    event.preventDefault();
     let target = event.target.name;
-    
+    let value = event.target.value.toUpperCase();
+
     this.setState({
-      [target]: event.target.value
+      [target]: value
     });
   }
-});
+};
 
-module.exports = Form;
+export default Form;

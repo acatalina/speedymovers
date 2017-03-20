@@ -1,20 +1,37 @@
-const React = require('react');
-const Animate = require('react-addons-css-transition-group');
+import React from 'react';
 
-function FormMovers() {
+const FormMovers = ((props) => {
   return (
     <div className="form">
-      <input type="text" name="name" placeholder="your name"></input>
-      <input type="email" name="email" placeholder="your email"></input>
-      <input type="tel" name="tel" placeholder="telephone"></input>
-      <input type="postcode" name="postcodefrom" placeholder="post code from"></input>
-      <input type="postcode" name="postcodeto" placeholder="post code to"></input>
-      <input type="number" name="nofbedrooms" placeholder="number of bedrooms"></input>
-      <input type="number" name="numberofitems" placeholder="number of items"></input>
-      <input type="date" name="datefor"></input>
-      <textarea name="message" placeholder="your message"></textarea>
+      <input type="text" name="name" required="required" 
+          placeholder="your name" value={props.name}>
+      </input>
+      <input type="email" name="email" required="required" 
+        placeholder="your email" value={props.email}>
+      </input>
+      <input type="tel" name="tel" required="required" 
+        placeholder="telephone" value={props.tel}>
+      </input>
+      <input type="text" name="postCodeFrom" required="required" 
+        placeholder="post code from" value={props.postCodeFrom}>
+      </input>
+      <input type="text" name="postCodeTo" required="required" 
+        placeholder="post code to" value={props.postCodeTo}>
+      </input>
+      <input type="number" name="nOfBedrooms" required="required" 
+        placeholder="number of bedrooms" value={props.nOfBedrooms}>
+      </input>
+      <input type="number" name="nOfItems" required="required" 
+        placeholder="number of items" value={props.nOfItems}>
+      </input>
+      <input type="date" name="dateFor" required="required" 
+        placeholder="request date" value={props.dateFor}>
+      </input>
+      <textarea name="message" required="required" 
+        placeholder="your message" value={props.message}>
+      </textarea>
     </div>
   );
-}
+});
 
-module.exports = FormMovers;
+export default FormMovers;
