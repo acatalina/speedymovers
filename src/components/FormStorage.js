@@ -4,23 +4,23 @@ const FormStorage = ((props) => {
   return (
     <div className="form">
       <input type="text" name="name" required="required" 
-        placeholder="your name">
+          placeholder="your name" value={props.name}>
       </input>
       <input type="email" name="email" required="required" 
-        placeholder="your email">
+        placeholder="your email" value={props.email}>
       </input>
       <input type="tel" name="tel" required="required" 
-        placeholder="telephone">
+        placeholder="telephone" value={props.tel}>
       </input>
-      <input type="date" name="datefor" required="required" defaultValue={props.defaultValue}
-        placeholder="request date">
+      <input type="date" name="datefor" required="required"
+        placeholder="request date" value={props.dateFor}>
       </input>
-      <select>type of storage
+      <select name="typeOfStorage" value={props.typeofStorage}>type of storage
         <option value="home">home storage</option>
         <option value="document">document storage</option>
         <option value="commercial">commercial storage</option>
       </select>
-      <select>size of unit
+      <select name="sizeOfUnit" value={props.sizeOfUnit}>size of unit
         <option value="15">15 sq ft (walk in wardrobe)</option>
         <option value="20">20 sq ft (2 telephone boxes)</option>
         <option value="25">25 sq ft (standard garden shed)</option>
@@ -33,7 +33,9 @@ const FormStorage = ((props) => {
         <option value="125">125 sq ft (3 bed home contents)</option>
         <option value="150">150 sq ft (7.5 tonne lorry)</option>
       </select>
-      <textarea name="message" required="required" placeholder="your message"></textarea>
+      <textarea name="message" required="required" 
+        placeholder="your message" value={props.message}>
+      </textarea>
     </div>
   );
 });

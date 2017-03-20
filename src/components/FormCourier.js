@@ -18,8 +18,8 @@ const FormCourier = ((props) => {
       <input type="postcode" name="postcodeto" required="required" 
         placeholder="post code to" value={props.postCodeTo}>
       </input>
-      <input type="number" name="numberofitems" required="required"
-        placeholder="number of items" value={props.numberOfItems}>
+      <input type="number" name="nofitems" required="required"
+        placeholder="number of items" value={props.nOfItems}>
       </input>
       <input type="date" name="datefor" required="required"
         placeholder="request date" value={props.datefor}>

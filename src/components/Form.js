@@ -15,9 +15,11 @@ class Form extends Component {
       message: '',
       postCodeFrom: '',
       postCodeTo: '',
-      noOfBedrooms: '',
-      numberOfItems: '',
-      datefor: ''
+      nOfBedrooms: '',
+      nOfItems: '',
+      dateFor: '',
+      sizeOfUnit: '15',
+      typeOfStorage: 'home'
     }
 
     this.whichSpeedy = this.whichSpeedy.bind(this);
@@ -37,7 +39,7 @@ class Form extends Component {
           {this.whichSpeedy(this.props)}
         </div>
         {this.formSelect(this.props)}
-        <button className="form-button button" type="submit">Send</button>
+        <input className="form-button button" type="submit" value="send"></input>
       </form>
     );
   }
@@ -75,10 +77,12 @@ class Form extends Component {
     }
   }
   onChangeInfoHandler(event) {
+    event.preventDefault();
     let target = event.target.name;
-    
+    let value = event.target.value.toUpperCase();
+
     this.setState({
-      [target]: event.target.value
+      [target]: value
     });
   }
 };
