@@ -7,7 +7,7 @@ The project was built using React, React-Addons-CSS-Transition-Group, React-Scro
 
 Branches: 
 
-1. gh-pages is the optimize built version.
-2. Master represents the raw version.
-3. V1 is the first version of the project deployed.
+1. gh-pages is the optimize built version from master.
+2. Master represents the current raw version.
+3. V1 is the first deployed version.
 4. priorReact represents early stages of the project without React, just HTML, CSS and Vanilla JS.
