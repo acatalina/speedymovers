@@ -29,7 +29,7 @@ class Form extends Component {
   render() {
     return (
       <form className="forms" onChange={this.onChangeInfoHandler} 
-        method="POST" action="https://formspree.io/ac.carrasco@gmail.com"
+        method="POST" action="https://formspree.io/speedystorage7@gmail.com"
       >
         <div className="form">
           <select onChange={this.props.contactHandler} value={this.props.contact}>
