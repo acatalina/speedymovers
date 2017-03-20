@@ -1,18 +1,34 @@
-const React = require('react');
+import React from 'react';
 
-function FormCourier() {
+const FormCourier = ((props) => {
   return (
     <div className="form">
-      <input type="text" name="name" placeholder="your name"></input>
-      <input type="email" name="email" placeholder="your email"></input>
-      <input type="tel" name="tel" placeholder="telephone"></input>
-      <input type="postcode" name="postcodefrom" placeholder="post code from"></input>
-      <input type="postcode" name="postcodeto" placeholder="post code to"></input>
-      <input type="number" name="numberofitems" placeholder="number of items"></input>
-      <input type="date" name="datefor"></input>
-      <textarea name="message" placeholder="your message"></textarea>
+      <input type="text" name="name" required="required" 
+        placeholder="your name" value={props.name}>
+      </input>
+      <input type="email" name="email" required="required"
+        placeholder="your email" value={props.email}>
+      </input>
+      <input type="tel" name="tel" required="required"
+        placeholder="telephone" value={props.tel}>
+      </input>
+      <input type="postcode" name="postcodefrom" required="required"
+        placeholder="post code from" value={props.postCodeFrom}>
+      </input>
+      <input type="postcode" name="postcodeto" required="required" 
+        placeholder="post code to" value={props.postCodeTo}>
+      </input>
+      <input type="number" name="nofitems" required="required"
+        placeholder="number of items" value={props.nOfItems}>
+      </input>
+      <input type="date" name="datefor" required="required"
+        placeholder="request date" value={props.datefor}>
+      </input>
+      <textarea name="message" required="required" 
+        placeholder="your message" value={props.message}>
+      </textarea>
     </div>
   );
-}
+});
 
-module.exports = FormCourier;
+export default FormCourier;

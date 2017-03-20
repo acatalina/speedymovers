@@ -1,24 +1,51 @@
-const React = require('react');
-const Form = require('./components/Form');
-const Section = require('./components/Section');
-const Quote = require('./components/Quote');
-const Contact = require('./components/Contact');
-const INFO = require('./INFO');
-require('./App.css');
-require('normalize.css');
-require('./components/css/content.css');
-require('font-awesome/css/font-awesome.css');
+import React, {Component} from 'react';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import INFO from './INFO';
+import 'normalize.css';
+import 'font-awesome/css/font-awesome.css';
+import './App.css';
 
-var App = React.createClass({
-  getInitialState() {
-    return {
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       logoClass: 'speedy-logo',
-      info: INFO
+      info: INFO,
+      contact: 'contact',
+      whichForm: ''
     }
-  },
-  componentDidMount: function() {
+
+    this.handleScroll = this.handleScroll.bind(this);
+    this.quoteClickHandler = this.quoteClickHandler.bind(this);
+    this.contactHandler = this.contactHandler.bind(this);
+    this.whichFormHandler = this.whichFormHandler.bind(this);
+  }
+  componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-  },
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header 
+          logoClass={this.state.logoClass}
+          handleScroll={this.handleScroll}
+        />
+        <Main 
+          info={this.state.info} 
+          sections={this.state.info.sections}
+          contact={this.state.contact} 
+          whichForm={this.state.whichForm}
+          contactHandler={this.contactHandler}
+          whichFormHandler={this.whichFormHandler}
+          quoteClickHandler={this.quoteClickHandler}
+        />
+        <Footer />
+      </div>
+    );
+  }
   handleScroll(event) {
     let shrinkOn = 300;
     let distanceY = window.pageYOffset || document.documentElement.scrollTop;
@@ -32,49 +59,31 @@ var App = React.createClass({
           logoClass: 'speedy-logo'
         });
       }
-  },
-  render() {
-    return (
-      <div className="App">
-        <header className="speedy-header">
-          <img src="logo.svg" alt="Speedy Movers" 
-            className={this.state.logoClass} 
-            onScroll={this.handleScroll}
-          />
-        </header>
-        <main className="content-wrapper">
-          <div className="sections-wrapper">
-            {this.generateSections(this.state.info)}
-          </div>
-          <div className="sections-wrapper">
-            <Quote isHidden="quote-desktop" />
-            <Quote isHidden="quote-desktop"/>
-            <Quote isHidden="quote-desktop"/>
-          </div>
-          <Contact />
-        </main>
-        <footer className="footer">
-          <div className="footer-contactdetails">
-            <span>Speedy Movers</span>
-            <span>Building 24a Hindley Business Centre</span>
-            <span>Prospect Mill</span>
-            <span>WN2 2PA</span>
-            <span>07923 953034</span>
-            <span>speedystorage7@gmail.com</span>
-          </div>
-          <p className="created">Coded by <a href="https://github.com/acatalina">
-          Drasek</a></p>
-        </footer>
-      </div>
-    );
-  },
-  generateSections(state) {
-    return state.sections.map(function(section, i) {
-      return (
-        <Section key={i} title={section} info={state[section]} />
-      );
+  }
+  contactHandler(event) {
+    if (event.target.value === 'quote') {
+      this.setState({
+        contact: 'quote',
+        whichForm: 'removals'
+      });
+    } else {
+      this.setState({
+        contact: 'contact',
+        whichForm: ''
+      });
+    }
+  }
+  whichFormHandler(event) {
+    this.setState({
+      whichForm: event.target.value,
     });
   }
-});
+  quoteClickHandler(whichForm) {
+    this.setState({ 
+      contact: 'quote',
+      whichForm: whichForm
+    });
+  }
+};
 
 export default App;
