@@ -6,7 +6,7 @@ configureAnchors({offset: -86});
 
 const Section = ((props) => {
   return (
-    <div className="section">
+    <section className="section">
       <ScrollableAnchor id={props.title}>
         <h2 className="section-title">{props.title}</h2>
       </ScrollableAnchor>
@@ -19,7 +19,7 @@ const Section = ((props) => {
           isHidden={'quote-phone'}
         />
       </div>
-    </div>
+    </section>
   );
 });
 

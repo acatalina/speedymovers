@@ -6,12 +6,12 @@ import Quote from './Quote';
 const Sections = ((props) => {
   return (
     <main className="content-wrapper">
-      <div className="sections-wrapper">
+      <section className="sections-wrapper">
         {generateSections(props)}
-      </div>
-      <div className="sections-wrapper">
+      </section>
+      <nav className="sections-wrapper">
         {generateQuoteDesktop(props)}
-      </div>
+      </nav>
       <Contact 
         contact={props.contact} 
         whichForm={props.whichForm}

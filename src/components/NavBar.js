@@ -3,10 +3,10 @@ import {goToTop} from 'react-scrollable-anchor';
 
 const NavBar = ((props) => {
   return (
-    <nav>
-      <a className="nav-item" onClick={goToTop}>Movers</a>
-      <a className="nav-item" href="#storage">Storage</a>
-      <a className="nav-item" href="#courier">Courier</a>
+    <nav className="header-nav">
+      <a className="header-nav-item" onClick={goToTop}>Movers</a>
+      <a className="header-nav-item" href="#storage">Storage</a>
+      <a className="header-nav-item" href="#courier">Courier</a>
     </nav>
   );
 });
