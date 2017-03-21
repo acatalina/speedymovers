@@ -5,7 +5,8 @@ const Header = ((props) => {
   return (
     <header className="speedy-header">
       <h1>
-        <img src="logo.svg" alt="Speedy Movers" 
+        <img id="speedy-movers-logo" itemProp="image" 
+          src="logo.svg" alt="Speedy Movers" 
           className={props.logoClass} 
           onScroll={props.handleScroll}
         />
