@@ -53,6 +53,10 @@ select {
   cursor: pointer;
 }
 
+.padding {
+  padding: 2em 0;
+}
+
 /* Header */
 
 .speedy-header {
@@ -150,8 +154,6 @@ select {
   margin: 0;
 }
 
-.quote { margin: 0 5em; }
-
 .quote-desktop { display: none; }
 
 /* Forms.css */
@@ -219,7 +221,6 @@ select {
 .footer-contactdetails {
   background: #8aa9cf;
   border-top: solid .2em #547cad;
-  border-bottom: solid .2em #547cad;
   padding: 1em;
 }
 
@@ -229,7 +230,8 @@ select {
 }
 
 .created {
-  background: #f7f7f7;
+  background: #547cad;
+  color: #eeeeee;
   display: block;
   padding: .5em;
   margin: 0;
@@ -239,14 +241,14 @@ select {
 
 @media only screen and (min-width: 577px) {
   
-  .section-img { width: 80%; }
+  .section-img { width: 40%; }
 }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 790px) {
 
-  .App { margin-top: 9.2em; }
+  .App { margin-top: 8.7em; }
 
-  .speedy-logo { width: 22em; }
+  .speedy-logo { width: 20em; }
 
   .speedy-logo-smaller { width: 12em; }
 
@@ -284,12 +286,10 @@ select {
   .quote-phone { display: none; }
 
   .quote-desktop {
-    display: flex;
-    margin: 1em 3em;
+    display: initial;
     font-size: 1em;
   }
-
-
+  
   .forms {
     padding: 2em 8em;
     display: flex;
@@ -341,11 +341,11 @@ select {
 
 @media only screen and (min-width: 1024px) {
 
-  .App { padding-top: 5.8em; }
+  .App { padding-top: 3.2em; }
 
-  .speedy-logo { width: 40em; }
+  .speedy-logo { width: 30em; }
 
-  .speedy-logo-smaller { width: 20em; }
+  .speedy-logo-smaller { width: 15em; }
 
   .section-title { font-size: 2em; }
 

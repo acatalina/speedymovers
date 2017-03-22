@@ -36,7 +36,7 @@ function generateSections(props) {
 function generateQuoteDesktop (props) {
   return props.info.sections.map((section, i) => {
     return (
-      <span key={i} className="section">
+      <span key={i} className="section padding quote-desktop">
         <Quote isHidden="quote-desktop" 
           quoteClickHandler={props.quoteClickHandler.bind(null, section)}
         />
