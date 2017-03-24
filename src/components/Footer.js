@@ -19,6 +19,9 @@ const Footer = (props) => {
         <meta itemProp="url" content="http://www.speedy-movers.co.uk/"/>
         <meta itemProp="image" content="http://www.speedy-movers.co.uk/logo.svg"/>
         <meta itemProp="priceRange" content="competitive"/>
+        <a  href='http://www.near.co.uk/self-storage/'>
+          <img className="near-link" alt=" Self Storage" src="http://www.near.co.uk/Images/LinkLogos/near-near.gif" />
+        </a>
       </div>
       <p className="created">Coded by <a href="https://github.com/acatalina">
         Drasek</a>

@@ -229,6 +229,10 @@ select {
   font-weight: 700;
 }
 
+.near-link {
+  margin-top: 1em;
+}
+
 .created {
   background: #547cad;
   color: #eeeeee;
