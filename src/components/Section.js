@@ -27,11 +27,11 @@ function generateInfo(info) {
   return info.map((elem, i) => {
     if (Array.isArray(elem)) {
       return (
-        <li key={i}>{elem[0]}<span>{elem[1]}</span></li>  
+        <li key={i}><h3>{elem[0]}</h3><h4>{elem[1]}</h4></li>  
       );
     }
     return (
-      <li key={i}>{elem}</li>
+      <li key={i}><h3>{elem}</h3></li>
     );
   });
 }
