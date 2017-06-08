@@ -1,136 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8" />
-  <title>Speedy Movers</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8" />
+	<title>Speedy Movers</title>
+	<link rel="stylesheet" href="styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300|Roboto" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-  <header class="top">
-    <img class="logo" src="logo.svg" alt="Speedy Movers" />
-    <nav class="menu">
-      <a class="button" id="removals">removals</a>
-      <a class="button" id="storage">storage</a>
-      <a class="button" id="courier">couriers</a>
-    </nav>
-  </header>
-  <div class="content">
-    <div class="section">
-      <h2 class="title">removals</h2>
-      <div class="sectionwrap">
-        <img class="sectionimg" src="movers.png" />
-        <div class="info">
-          <ul>
-            <li>residential &amp commercial</li>
-            <li>nationwide &amp european</li>
-            <li>packing &amp wrapping service</li>
-            <li>prices from £145*
-              <span>*one bed flat move within 20 miles</span>
-            </li>
-            <li>price match guarantee</li>
-          </ul>
-          <a class="quote" href="#">get a quote</a>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <h2 class="title">storage</h2>
-      <div class="sectionwrap">
-        <img class="sectionimg" src="storage.png" />
-        <div class="info">
-          <ul>
-            <li>home &amp office</li>
-            <li>documents &amp small box</li>
-            <li>discounts for moving</li>
-            <li>based in the north west</li>
-            <li>prices from £1.50 per sq ft</li>
-          </ul>
-          <a class="quote" href="#">get a quote</a>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <h2 class="title">courier</h2>
-      <div class="sectionwrap">
-        <img class="sectionimg" src="courier.png" />
-        <div class="info">
-          <ul>
-            <li>sameday nationwide</li>
-            <li>ebay collection and delivery</li>
-            <li>overnight deliveries</li>
-            <li>specialist deliveries
-              <span>i.e. auction houses</span>
-            </li>
-            <li>prices from 90p per mile</li>
-          </ul>
-          <a class="quote" href="#">get a quote</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer class="footer">
-    <div class="footerline"></div>
-    <div class="contactwrap">
-      <div class="contactform">
-        <select id="contactorquote">
-          <option value="contact">I would like to contact Speedy Movers</option>
-          <option value="quote">I would like a quote</option>
-        </select>
-        <select id="whichspeedy" class="hidden">
-          <option value="removals">from Speedy Removals</option>
-          <option value="storage">from Speedy Storage</option>
-          <option value="courier">from Speedy Couriers</option>
-        </select>
-        <form class="form" method="POST" action="http://formspree.io/ac.carrasco@gmail.com">
-          <input type="text" name="name" placeholder="your name">
-          <input type="email" name="email" placeholder="your email">
-          <input type="tel" name="tel" placeholder="telephone">
-          <input class="movers, courier, hidden" type="postcode" name="postcodefrom">
-          <input class="movers, courier, hidden" type="postcode" name="postcodeto">
-          <input class="movers, hidden" type="number" name="nofbedrooms">
-          <input class="movers, courier, hidden" type="number" name="numberofitems">
-          <input class="generic, hidden" type="date" name="datefor">
-          <select class="storage, hidden">type of storage
-            <option value="home">home storage</option>
-            <option value="document">document storage</options>
-            <option value="commercial">commercial storage</option>
-          </select>
-          <select class="storage, hidden">size of unit
-            <option value="15">15 sq ft (walk in wardrobe)</option>
-            <option value="20">20 sq ft (2 telephone boxes)</option>
-            <option value="25">25 sq ft (standard garden shed)</option>
-            <option value="30">30 sq ft</option>
-            <option value="35">35 sq ft (studio flat contents)</option>
-            <option value="40">40 sq ft (large garden shed)</option>
-            <option value="50">50 sq ft (transit van / 1 bed flat contents)</option>
-            <option value="75">75 sq ft (luton van)</option>
-            <option value="100">100 sq ft (single garage / 2 bed home contents)</option>
-            <option value="125">125 sq ft (3 bed home contents)</option>
-            <option value="150">150 sq ft (7.5 tonne lorry)</option>
-          <select>
-          <input type="text" name="subject" placeholder="subject">
-          <textarea name="message" placeholder="your message"></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-      <a class="callus" href="tel:07923953034">call us now on 07923 953034</a>
-      <a class="links" href="https://www.facebook.com/Speedy-Movers-Wigan-1646450355572387/">
-        Follow us on<span>Facebook</span>
-      </a>
-      <a class="links" href="https://twitter.com/speedym2">Follow us on
-        <span>Twitter</span></a>
-    </div>
-    <div class="contactdetails">
-      <span>Speedy Movers</span>
-      <span>Building 24a Hindley Business Centre</span>
-      <span>Prospect Mill</span>
-      <span>WN2 2PA</span>
-    </div>
-    <p class="created">Created and Coded by <a href="https://github.com/acatalina">
-      Drasek</a></p>
-  </footer>
-  <script src="main.js"></script>
+	<header class="header">
+		<div class="container">
+			<div class="header-wrapper">
+				<img class=" speedy-logo" src="logo.svg" alt="Speedy Movers" />
+				<nav class="header-nav">
+					<a class="header-nav-item">REMOVALS</a>
+					<span class="vertical-line"></span>
+					<a class="header-nav-item">STORAGE</a>
+					<span class="vertical-line"></span>
+					<a class="header-nav-item">COURIERS</a>
+					<span class="vertical-line"></span>
+					<a class="header-nav-item">ABOUT US</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="splash">
+			<div class="container">
+				<div class="splash-wrapper">
+					<div class="splash-text">
+						<h1>Speedy Movers UK</h1>
+						<h2>Specialists on removals, storage and courier services for you and your business</h2>
+					</div>
+					<div class="splash-contact">
+						<button class="button">Get a quote now</button>
+						<button class="button">Call us on 0777777777</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="main.js "></script>
 </body>
+
 </html>
