@@ -1,16 +1,16 @@
 // Reduce logo on scroll:
 
 function reduceLogoOnScroll() {
-  var logo = document.querySelector('.logo'),
+  var logo = document.querySelector('.speedy-logo'),
       shrinkOn = 200;
 
   window.addEventListener('scroll', function() {
     var distanceY = window.pageYOffset || document.documentElement.scrollTop;
 
     if(distanceY > shrinkOn) {
-      logo.classList.add('smaller');
-    } else if(logo.classList.contains('smaller')) {
-      logo.classList.remove('smaller');
+      logo.classList.add('speedy-logo-smaller');
+    } else if(logo.classList.contains('speedy-logo-smaller')) {
+      logo.classList.remove('speedy-logo-smaller');
     }
   });
 };
