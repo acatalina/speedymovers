@@ -1,5 +1,6 @@
 *, *::before, *::after {
 	box-sizing: border-box;
+	font-family: inherit;
 }
 
 *:focus {
@@ -373,6 +374,7 @@ p {
 
 .form {
 	margin-bottom: 2em;
+	font-size: 1.25em;
 }
 
 .form-head {
@@ -387,7 +389,7 @@ p {
 }
 
 .form-head select {
-	padding: .5em;
+	padding: 1em .5em;
 	width: 100%; /* remove on media */
 }
 
@@ -405,18 +407,19 @@ p {
 .form-unit label {
 	width: 100%;
 	/*width: 25%; on media */
-	padding: .5em;
+	padding: 0 .5em;
 }
 
 .form-unit input, .form-unit textarea {
 	width: 100%;
 	/*width: 75%; on media */
-	padding: .5em;
+	padding: 1em .5em;
 }
 
 .form-unit input, .form-unit textarea, .form-unit select, .form-head select {
 	border-radius: 5px;
 	border: 1px solid transparent;
+	font-size: inherit;
 }
 
 .form-button {
@@ -517,6 +520,8 @@ p {
 
 .footer-elem h3 {
 	width: 100%;
+	margin: 0;
+	margin-bottom: 1em;
 }
 
 .footer-elem:first-child {
