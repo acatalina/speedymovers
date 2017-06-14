@@ -4,7 +4,7 @@ const hamButton = header.querySelector('.ham-button');
 const hamMenu = header.querySelector('.ham-menu');
 const navMenu = header.querySelector('.header-nav');
 
-var menuOpen = false;
+var menuOpen = true;
 
 function toggleMenu(e) {
   menuOpen = !menuOpen;
@@ -17,7 +17,7 @@ function toggleMenu(e) {
 }
 
 hamButton.addEventListener('click', toggleMenu);
-
+window.onload = toggleMenu;
 
 // Form interaction
 
