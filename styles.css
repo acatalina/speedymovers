@@ -45,6 +45,12 @@ section:nth-child(even) h1, section:nth-child(even) h2 {
 	color: #547cad;
 }
 
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: url(imgs/dropdown.png) right / 2em no-repeat white;
+}
+
 footer {
 	color: #f7f7f7;
 }
@@ -63,16 +69,17 @@ ul {list-style: none;}
 }
 
 .button {
-	padding: 1em;
 	background: transparent;
-	color: white;
-	font-weight: 900;
-	text-transform: uppercase;
 	border: 1px solid white;
 	border-radius: 5px;
-	font-size: 1.5em;
-	font-family: 'Oswald', sans-serif;
+	color: white;
 	cursor: pointer;
+	display: block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.5em;
+	font-weight: 900;
+	padding: 1em;
+	text-transform: uppercase;
 	width: 100%; 	/* remove width on media query */
 }
 
@@ -277,7 +284,6 @@ p {
 	font-family: 'Oswald', sans-serif;
 }
 
-
 /* Main */
 
 .splash {
@@ -383,10 +389,10 @@ p {
 	align-items: center;
 	flex-wrap: wrap;
 }
-
+/*
 .form-head select:first-child {
 	margin-bottom: 1em;
-}
+}*/
 
 .form-head select {
 	padding: 1em .5em;
@@ -399,9 +405,10 @@ p {
 }
 
 .form-unit {
-	padding: 1em 0;
+	margin: 1em 0;
 	display: flex;
 	flex-wrap: wrap;
+	width: 100%;
 }
 
 .form-unit label {
@@ -418,7 +425,7 @@ p {
 
 .form-unit input, .form-unit textarea, .form-unit select, .form-head select {
 	border-radius: 5px;
-	border: 1px solid transparent;
+	border: 2px solid #547cad;
 	font-size: inherit;
 }
 
@@ -427,7 +434,6 @@ p {
 	background: #547cad;
 	margin-top: 1em;
 }
-
 
 /* Contact details */
 
@@ -456,6 +462,7 @@ p {
 .remove {
 	opacity: 0;
 	transition: .2s all ease-out;
+	transform: translateY(-100%);
 }
 
 .whichspeedy {
@@ -501,13 +508,23 @@ p {
 @keyframes fadein {
 	from {
 		opacity: 0;
+		transform: translateY(-100%);
 	}
 	to {
 		opacity: 1;
-		width: inherit;
-		height: inherit;
-		font-size: inherit;
+		transform: translateY(0);
 	}
+}
+
+.back-to-top {
+	background: #547cad;
+	border: 0;
+	color: #f7f7f7;
+	font-size: 1.25em;
+	font-weight: 900;
+	padding: 2em;
+	text-align: center;
+	width: 100%;
 }
 
 /* Footer */

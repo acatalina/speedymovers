@@ -14,7 +14,7 @@
 		<div class="container">
 			<div class="header-wrapper">
 				<a href="index.html">
-					<img class=" speedy-logo" src="imgs/logo.svg" alt="Speedy Movers" />
+					<img class="speedy-logo" src="imgs/logo.svg" alt="Speedy Movers" />
 				</a>
 				<nav class="header-nav">
 					<a class="header-nav-item" href="removals.html">REMOVALS</a>
@@ -46,7 +46,7 @@
 						</div>
 						<div class="splash-contact">
 							<button class="button">Get a quote now</button>
-							<button class="button">Call us on 0777777777</button>
+							<a  class="button" href="tel:+447923953034">Call us on 07923953034</a>
 						</div>
 					</div>
 				</div>
@@ -117,17 +117,21 @@
 						<article class="col2">
 							<form class="form col" method="POST" action="https://formspree.io/accarrasco@gmail.com">
 								<div class="form-head">
-									<select value="what">
-										<option selected="selected" value="contact">
-											I would like to contact Speedy Movers
-										</option>
-										<option value="quote">I would like a quote</option>
-									</select>
-									<select class="remove" value="which">
-										<option value="removals">from Speedy Removals</option>
-										<option value="storage">from Speedy Storage</option>
-										<option value="courier">from Speedy Couriers</option>
-									</select>
+									<div class="form-unit">
+										<select value="what">
+											<option selected="selected" value="contact">
+												I would like to contact
+											</option>
+											<option value="quote">I would like a quote</option>
+										</select>
+									</div>
+									<div class="form-unit" data-value="which">
+										<select value="which">
+											<option value="removals">from Speedy Removals</option>
+											<option value="storage">from Speedy Storage</option>
+											<option value="courier">from Speedy Couriers</option>
+										</select>
+									</div>
 								</div>
 								<div class="form-main">
 									<div class="form-contact">
@@ -143,7 +147,7 @@
 											<label for="tel">Your telephone:</label>
 											<input type="tel" name="tel" required="required" placeholder="telephone" />
 										</div>
-										<div class="form-removals up">
+										<div class="form-removals">
 											<div class="form-unit">
 												<label for="postCodeFrom">Postcode from:</label>
 												<input type="text" name="postCodeFrom" required="required" placeholder="post code from" />
@@ -206,6 +210,9 @@
 					</div>
 				</div>
 			</section>
+			<button class="back-to-top">
+				BACK TO TOP
+			</button>
 		</main>
 		<footer>
 			<div class="container">
