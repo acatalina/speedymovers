@@ -224,7 +224,7 @@ p {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 2em;
+	padding: 1em 2em;
 	position: relative;
 }
 
@@ -257,7 +257,7 @@ p {
 	padding: 6em 2em;
 	width: 60%;
 	text-align: center;
-	transform: translateX(100%);
+	/*transform: translateX(100%);*/
 	transition: .2s all ease-in-out;
 	display: flex;
 	flex-direction: column;
@@ -301,7 +301,7 @@ p {
 }
 
 .splash-text h1 {
-	font-size: 5em;
+	font-size: 5.5em;
 	margin-bottom: 0;
 }
 
