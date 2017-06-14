@@ -1,52 +1,67 @@
-// Reduce logo on scroll:
+// Menu
+const header = document.querySelector('header');
+const hamButton = header.querySelector('.ham-button');
+const hamMenu = header.querySelector('.ham-menu');
+const navMenu = header.querySelector('.header-nav');
 
-function reduceLogoOnScroll() {
-  var logo = document.querySelector('.speedy-logo'),
-      shrinkOn = 200;
+var menuOpen = false;
 
-  window.addEventListener('scroll', function() {
-    var distanceY = window.pageYOffset || document.documentElement.scrollTop;
+function toggleMenu(e) {
+  menuOpen = !menuOpen;
 
-    if(distanceY > shrinkOn) {
-      logo.classList.add('speedy-logo-smaller');
-    } else if(logo.classList.contains('speedy-logo-smaller')) {
-      logo.classList.remove('speedy-logo-smaller');
-    }
-  });
-};
-
-window.onload = reduceLogoOnScroll;
-
-// Form interaction:
-
-var contactorquote = document.querySelector('#contactorquote'),
-    whichspeedy = document.querySelector('#whichspeedy'),
-    removals = document.querySelector('.movers'),
-    storage = document.querySelector('.storage');
-
-contactorquote.addEventListener('change', function() {
-	if(contactorquote.value === 'quote') {
-    whichspeedy.classList.remove('hidden');
-  } else if(contactorquote.value === 'contact') {
-    whichspeedy.classList.add('hidden');
+  if (menuOpen) {
+    return hamMenu.style.transform = 'translateX(0)';
   }
-});
 
-whichspeedy.addEventListener('change', function() {
-  if(whichspeedy.value === 'removals') {
-    removals.classList.remove('hidden');
-  } else if(whichspeedy.value === 'storage') {
-    storage.classList.remove('hidden');
+  hamMenu.style.transform = 'translateX(100%)';
+}
+
+hamButton.addEventListener('click', toggleMenu);
+
+
+// Form interaction
+
+function whatSelect(e) {
+  var value = e.target.value;
+  if (value === 'contact') {
+    which.remove();
+    return removals.remove();
   }
-});
 
+  head.appendChild(which);
+  main.insertBefore(removals, main.lastElementChild);
+  which.classList.add('whichspeedy');
+  removals.classList.add('down');
+  which.addEventListener('animationend', () => {which.classList.remove('remove')})
+}
 
-// Menu scroll to:
+function whichSelect(e) {
+  var value = e.target.value;
 
-var removals = document.querySelector('#removals'),
-    storage = document.querySelector('#storage'),
-    courier = document.querySelector('#courier');
+  if (value === 'removals') {
+    removals.classList.add('down');
+    return main.insertBefore(removals, main.lastElementChild);
+  }
+  removals.classList.remove('down');
+  removals.classList.add('up');
+}
 
-removals.addEventListener('click', function scrollTo() {
-  window.scrollTo(0, 0);
+const form = document.querySelector('.form');
+const head = form.querySelector('.form-head');
+const what = form.querySelector('[value="what"]');
+const which = form.querySelector('[value="which"]');
+const main = form.querySelector('.form-main');
+const removals = form.querySelector('.form-removals');
+which.remove();
+removals.remove();
+what.addEventListener('change', whatSelect);
+which.addEventListener('change', whichSelect);
+removals.addEventListener('animationend', (e) => {
+  if (e.animationName === 'godown') {
+    return removals.classList.remove('up');
+  } else {
+
+  removals.classList.remove('down');
+  removals.remove();
+  }
 });
