@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Speedy Movers</title>
+	<link rel="stylesheet" href="styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300|Roboto" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header-wrapper">
+				<a href="index.html">
+					<img class=" speedy-logo" src="logo.svg" alt="Speedy Movers" />
+				</a>
+				<nav class="header-nav">
+					<a class="header-nav-item">REMOVALS</a>
+					<span class="vertical-line"></span>
+					<a class="header-nav-item">STORAGE</a>
+					<span class="vertical-line"></span>
+					<a class="header-nav-item">COURIERS</a>
+					<span class="vertical-line"></span>
+					<a class="header-nav-item">ABOUT US</a>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="splash">
+			<div class="container">
+				<div class="splash-wrapper">
+					<div class="splash-text">
+						<h1>Speedy Movers - Removals</h1>
+						<h2>Specialists on removals, storage and courier services for you and your business</h2>
+					</div>
+					<div class="splash-contact">
+						<button class="button">Get a quote now</button>
+						<button class="button">Call us on 0777777777</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="contact-wrapper">
+					<h1 class="blue">What we offer</h1>
+
+				</div>
+			</div>
+		</section>
+		<section class="contact">
+			<div class="container">
+				<div class="contact-wrapper">
+					<h1 class="blue">Contact us</h1>
+					<article class="col2">
+						<form class="form col" method="POST" action="https://formspree.io/accarrasco@gmail.com">
+							<div class="form-head">
+								<select value="what">
+									<option selected="selected" value="contact">
+										I would like to contact Speedy Movers
+									</option>
+									<option value="quote">I would like a quote</option>
+								</select>
+								<select class="remove" value="which">
+									<option value="removals">from Speedy Removals</option>
+									<option value="storage">from Speedy Storage</option>
+									<option value="courier">from Speedy Couriers</option>
+								</select>
+							</div>
+							<div class="form-main">
+								<div class="form-contact">
+									<div class="form-unit">
+										<label for="name">Your name:</label>
+										<input type="text" name="name" required="required" placeholder="your name" />
+									</div>
+									<div class="form-unit">
+										<label for="email">Your email:</label>
+										<input type="email" name="email" required="required" placeholder="your email" />
+									</div>
+									<div class="form-unit">
+										<label for="tel">Your telephone:</label>
+										<input type="tel" name="tel" required="required" placeholder="telephone" />
+									</div>
+									<div class="form-removals up">
+										<div class="form-unit">
+											<label for="postCodeFrom">Postcode from:</label>
+											<input type="text" name="postCodeFrom" required="required" placeholder="post code from" />
+										</div>
+										<div class="form-unit">
+											<label for="postCodeTo">Postcode to:</label>
+											<input type="text" name="postCodeTo" required="required" placeholder="post code to" />
+										</div>
+										<div class="form-unit">
+											<label for="nOfBedrooms">No of Bedrooms:</label>
+											<input type="number" name="nOfBedrooms" required="required" placeholder="number of bedrooms" />
+										</div>
+										<div class="form-unit">
+											<label for="nOfItems">No of Items:</label>
+											<input type="number" name="nOfItems" required="required" placeholder="number of items" />
+										</div>
+										<div class="form-unit">
+											<label for="dateFor">Date for:</label>
+											<input type="date" name="dateFor" required="required" placeholder="request date" />
+										</div>
+									</div>
+								</div>
+								<div class="form-unit">
+									<label for="message">Your message:</label>
+									<textarea name="message" required="required" placeholder="your message"></textarea>
+								</div>
+							</div>
+							<input class="form-button button" type="submit" value="send" />
+						</form>
+						<div class="details col">
+							<div class="col2">
+								<div class="col" itemscope itemtype="http://schema.org/LocalBusiness">
+									<span itemprop="name">Speedy Movers UK</span>
+									<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+										<span itemprop="streetAddress">
+											<span>Building 24a Hindley Business Centre</span>
+									<span>Prospect Mill</span>
+									</span>
+									<span itemprop="postalCode">WN2 3PA</span>
+									<span itemprop="addressLocality">Hindley, Wigan</span>
+									<span itemprop="addressRegion">Northwest</span>
+									<span itemprop="addressCountry">England, United Kingdom</span>
+									</span>
+									<span itemprop="telephone">07923 953034</span>
+									<span itemprop="email">speedystorage7@gmail.com</span>
+									<meta itemprop="url" content="http://www.speedy-movers.co.uk/" />
+									<meta itemprop="image" content="http://www.speedy-movers.co.uk/logo.svg" />
+									<meta itemprop="priceRange" content="competitive" />
+								</div>
+								<div class="col center">
+									<a href="http://www.near.co.uk/self-storage/">
+										<img class="near-link" alt=" Self Storage" src="http://www.near.co.uk/Images/LinkLogos/near-near.gif" />
+									</a>
+								</div>
+							</div>
+							<iframe class="map" src="https://www.google.com/maps?q=Speedy Movers %24a Hindley Business Centre, Prospect Mill, Hindley, Wigan WN23PA&output=embed"
+							 frameborder="0" style="border:0" allowfullscreen></iframe>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="main.js "></script>
+</body>
+
+</html>
