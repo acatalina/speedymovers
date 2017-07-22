@@ -22,7 +22,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	position: relative;
+	/* position: relative; */
 }
 
 .main-wrapper {
@@ -65,14 +65,15 @@ button {
 /* Generic classes */
 
 .container {
+	height: 100%;
 	margin: 0 auto;
 	max-width: 1024px;
-	width: 100%;
-	height: 100%;
 	overflow: hidden;
+	width: 100%;
 }
 
 .button {
+	-webkit-appearance: none;
 	background: transparent;
 	border: 1px solid white;
 	border-radius: 5px;
@@ -128,7 +129,6 @@ a, select, button {
 .list li {
 	margin: 1em 0;
 }
-
 
 /* Helpers */
 
@@ -195,7 +195,6 @@ a, select, button {
 	color: #f7f7f7;
 }
 
-
 /* Fonts */
 
 h1, h2 {
@@ -217,7 +216,6 @@ h2 {
 p {
 	font-size: 1.25em;
 }
-
 
 /* Header */
 
@@ -263,15 +261,15 @@ p {
 	}
 
 .ham-menu {
-	position: absolute;
+	position: fixed;
 	top: 0;
-	right: 0;
+	right: 0; 
 	bottom: 0;
 	background: #fffffe;
 	padding: 6em 2em;
 	width: 60%;
 	text-align: center;
-	/*transform: translateX(100%);*/
+	transform: translateX(100%); 
 	transition: .2s all ease-in-out;
 	display: flex;
 	flex-direction: column;
@@ -382,7 +380,6 @@ p {
 	margin-top: 1em;
 }
 
-
 /* Form */
 
 .form {
@@ -407,7 +404,7 @@ p {
 }
 
 .form-contact {
-	margin-top: 2em;
+	margin-top: 1em;
 	width: 100%;
 }
 
