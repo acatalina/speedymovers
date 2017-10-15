@@ -308,6 +308,7 @@ p {
 }
 
 .splash-text {
+	width: 100%;
 	/* margin: auto on media query */
 }
 
@@ -325,11 +326,10 @@ p {
 	width: 100%;
 }
 
-.splash-contact button:first-child {
+.splash-contact a:first-child {
 	margin-bottom: 1em;
 	/* margin-right: 3em; on media query */
 }
-
 
 /* Review Card */
 
@@ -421,7 +421,9 @@ p {
 	padding: .5em 0;
 }
 
-.form-unit input, .form-unit textarea {
+.form-unit input, 
+.form-unit textarea, 
+.form-unit select {
 	width: 100%;
 	/*width: 75%; on media */
 	padding: 1em .5em;
@@ -567,3 +569,9 @@ p {
 .footer-list img {
 	width: 4em;
 }
+
+@media (min-width: 467px) {
+	.splash-text {
+		margin-top: 6em;
+	}
+} 
