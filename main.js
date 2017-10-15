@@ -24,7 +24,10 @@ function whatSelect(e) {
 
   if (value === 'contact') {
     which.classList.toggle('up');
-    return removals.remove();
+    which.querySelector('select').value = 'removals';
+    removals.remove();
+    storage.remove();
+    return courier.remove();
   }
 
   head.appendChild(which);
@@ -37,11 +40,31 @@ function whichSelect(e) {
   var value = e.target.value;
 
   if (value === 'removals') {
+    storage.remove();
+    courier.remove();
     removals.classList.add('down');
     return main.insertBefore(removals, main.lastElementChild);
   }
   removals.classList.remove('down');
   removals.classList.add('up');
+
+  if (value === 'storage') {
+    removals.remove();
+    courier.remove();
+    storage.classList.add('down');
+    return main.insertBefore(storage, main.lastElementChild);
+  }
+  storage.classList.remove('down');
+  storage.classList.add('up');
+
+  if (value === 'courier') {
+    removals.remove();
+    storage.remove();
+    courier.classList.add('down');
+    return main.insertBefore(courier, main.lastElementChild);
+  }
+  courier.classList.remove('down');
+  courier.classList.add('up');
 }
 
 function upAndDown(e) {
@@ -60,17 +83,24 @@ const what = form.querySelector('[value="what"]');
 const which = form.querySelector('[data-value="which"]');
 const main = form.querySelector('.form-main');
 const removals = form.querySelector('.form-removals');
+const storage = form.querySelector('.form-storage');
+const courier = form.querySelector('.form-courier');
 
 what.addEventListener('change', whatSelect);
 which.addEventListener('change', whichSelect);
 which.addEventListener('animationend', upAndDown);
 removals.addEventListener('animationend', upAndDown);
+storage.addEventListener('animationend', upAndDown);
+courier.addEventListener('animationend', upAndDown);
 which.remove();
 removals.remove();
+storage.remove();
+courier.remove();
 
 // Scroll Top
 
 var backToTop = document.querySelector('.back-to-top');
-backToTop.addEventListener('click', function() {
+
+backToTop.addEventListener('click', function () {
   document.querySelector(this.dataset.target).scrollTop = 0;
 });
