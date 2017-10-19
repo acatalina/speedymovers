@@ -152,6 +152,7 @@ a, select, button {
 @media (min-width: 550px) {
 	.col {
 		width: 50%;
+		padding: 0 1em;
 	}
 
 	.right {
@@ -160,8 +161,9 @@ a, select, button {
 
 	.col3 {
 		width: 33%;
+		padding: 0;
 	}
-} 
+}
 
 .absolute {
 	position: absolute;
@@ -263,13 +265,13 @@ p {
 .ham-menu {
 	position: fixed;
 	top: 0;
-	right: 0; 
+	right: 0;
 	bottom: 0;
 	background: #fffffe;
 	padding: 6em 2em;
 	width: 60%;
 	text-align: center;
-	transform: translateX(100%); 
+	transform: translateX(100%);
 	transition: .2s all ease-in-out;
 	display: flex;
 	flex-direction: column;
@@ -309,11 +311,11 @@ p {
 
 .splash-text {
 	width: 100%;
-	/* margin: auto on media query */
+	/* margin: auto; */
 }
 
 .splash-text h1 {
-	font-size: 5.5em;
+	font-size: 5em;
 	margin-bottom: 0;
 }
 
@@ -421,8 +423,8 @@ p {
 	padding: .5em 0;
 }
 
-.form-unit input, 
-.form-unit textarea, 
+.form-unit input,
+.form-unit textarea,
 .form-unit select {
 	width: 100%;
 	/*width: 75%; on media */
@@ -574,4 +576,12 @@ p {
 	.splash-text {
 		margin-top: 6em;
 	}
-} 
+}
+
+@media (min-width: 768px) {
+	.button {
+		display: inline-block;
+		width: 30%;
+		margin: 0 1em;
+	}
+}
