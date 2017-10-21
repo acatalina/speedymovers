@@ -29,10 +29,6 @@ body {
 	overflow: auto;
 }
 
-section, footer {
-	padding: 2em;
-}
-
 section:nth-child(odd), footer {
 	background-color: rgba(84, 124, 173, .6);
 }
@@ -69,6 +65,7 @@ button {
 	margin: 0 auto;
 	max-width: 1024px;
 	overflow: hidden;
+	padding: 2em;
 	width: 100%;
 }
 
@@ -146,23 +143,7 @@ a, select, button {
 }
 
 .col3 {
-	padding: 1em;
-}
-
-@media (min-width: 550px) {
-	.col {
-		width: 50%;
-		padding: 0 1em;
-	}
-
-	.right {
-		justify-content: flex-end;
-	}
-
-	.col3 {
-		width: 33%;
-		padding: 0;
-	}
+	padding: 0 0 1em 0;
 }
 
 .absolute {
@@ -180,10 +161,10 @@ a, select, button {
 .center {
 	text-align: center;
 }
-
+/*
 .right {
 	justify-content: center;
-}
+} */
 
 .space {
 	margin: 0 1em;
@@ -236,7 +217,6 @@ p {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1em 2em;
 	position: relative;
 }
 
@@ -251,7 +231,7 @@ p {
 	bottom: 0;
 	padding: 0;
 	position: absolute;
-	right: 2em;
+	right: 0;
 	top: 0;
 	width: 3em;
 	z-index: 2;
@@ -340,7 +320,6 @@ p {
 	padding: 0;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin: -1em;
 }
 
 .review-card {
@@ -395,10 +374,10 @@ p {
 	align-items: center;
 	flex-wrap: wrap;
 }
-/*
-.form-head select:first-child {
-	margin-bottom: 1em;
-}*/
+
+.form-head div:first-child {
+	margin-top: 0em;
+}
 
 .form-head select {
 	padding: 1em .5em;
@@ -465,6 +444,10 @@ p {
 	border-radius: .5em;
 	margin-top: 2em;
 	width: 100%;
+}
+
+.width100 {
+	width: 100% !important;
 }
 
 .remove {
@@ -559,7 +542,7 @@ p {
 }*/
 
 .footer-list {
-	font-size: .8em;
+	font-size: .7em;
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -578,10 +561,48 @@ p {
 	}
 }
 
+@media (min-width: 550px) {
+	.col {
+		width: 50%;
+		padding: 0 1em;
+	}
+
+	.right {
+		justify-content: flex-end;
+	}
+
+	.left {
+		justify-content: flex-start;
+	}
+
+	.col3 {
+		width: 33%;
+		padding: 0;
+	}
+
+	.header-nav {
+		transition: .3s all ease-in-out;
+		transform: translateX(0);
+	}
+
+	.ham-button {
+		transition: .3s all ease-in-out;
+		transform: translateX(500%)
+	}
+
+	.ham-menu {
+		display: none;
+	}
+}
+
 @media (min-width: 768px) {
 	.button {
 		display: inline-block;
-		width: 30%;
+		width: 35%;
 		margin: 0 1em;
+	}
+
+	.footer-list {
+		font-size: 1em;
 	}
 }
