@@ -209,6 +209,11 @@ p {
 	border-bottom: 2px solid rgba(84, 124, 173, .6);
 }
 
+	.header .container {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
 .speedy-logo {
 	width: 8em;
 }
@@ -578,6 +583,11 @@ p {
 	.col3 {
 		width: 33%;
 		padding: 0;
+	}
+
+	.header .container {
+		padding-top: 2em;
+		padding-bottom: 2em;
 	}
 
 	.header-nav {
