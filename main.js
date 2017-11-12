@@ -92,11 +92,27 @@ which.addEventListener('animationend', upAndDown);
 removals.addEventListener('animationend', upAndDown);
 storage.addEventListener('animationend', upAndDown);
 courier.addEventListener('animationend', upAndDown);
-which.remove();
-removals.remove();
-storage.remove();
-courier.remove();
-
+if (what.value === 'quote') {
+  switch (which.children[0].value) {
+    case 'removals':
+      storage.remove();
+      courier.remove();
+      break;
+    case 'storage':
+      removals.remove();
+      courier.remove();
+      break;
+    case 'courier':
+      removals.remove();
+      storage.remove();
+      break;
+  }
+} else {
+  which.remove();
+  removals.remove();
+  storage.remove();
+  courier.remove();
+}
 // Scroll Top
 
 var backToTop = document.querySelector('.back-to-top');
