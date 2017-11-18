@@ -113,6 +113,10 @@ a, select, button {
 	text-align: center;
 }
 
+.only-desktop {
+	display: none;
+}
+
 /* Helpers */
 
 .col2 {
@@ -354,43 +358,44 @@ span {display: block;}
 }
 
 .review-card div {
-	height: 100px;
-	width: 100px;
-	border-radius: 50%;
-	border: 1px solid #547cad;
-	display: flex;
-	justify-content: center;
 	align-items: center;
+	border: 1px solid #547cad;
+	border-radius: 50%;
+	display: flex;
+	height: 100px;
+	justify-content: center;
+	width: 100px;
 }
 
 .review-card p {
 	flex-grow: 2;
+	font-size: 1em;
 	font-style: italic;
 }
 
 .review-card span {
-	width: 100%;
+	font-size: 1.1em;
 	text-align: right;
-	font-size: 1.3em;
+	width: 100%;
 }
 
 .stars {
-	width: 50%;
 	margin-top: 1em;
+	width: 100px;
 }
 
 /* Form */
 
 .form {
-	margin-bottom: 2em;
 	font-size: 1.25em;
+	margin-bottom: 2em;
 }
 
 .form-head {
-	display: flex;
-	justify-content: space-around;
 	align-items: center;
+	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .form-head div:first-child {
@@ -619,6 +624,8 @@ span {display: block;}
 }
 
 @media (min-width: 768px) {
+	.only-desktop { display: initial; }
+
 	.button {
 		display: inline-block;
 		width: 35%;
@@ -628,4 +635,7 @@ span {display: block;}
 	.footer-list {
 		font-size: 1em;
 	}
+
+	.review-card p,
+	.review-card span { font-size: 1.25em; }
 }
