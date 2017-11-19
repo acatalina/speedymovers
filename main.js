@@ -20,7 +20,6 @@
   hamButton.addEventListener('click', toggleMenu);
 })();
 
-
 // Form interaction
 
 (function formHandler() {
@@ -121,12 +120,54 @@
   }
 })();
 
-// Scroll Top
+// Smooth scroll
 
-(function scrollHandler() {
+(function applySmoothScroll() {
+  function scrollIt(destination, duration = 500) {
+    function easeInOutQuart(t) {
+      return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
+    }
+
+    var startTime = window.performance.now ? performance.now() : new Date().getTime();
+    var offset = screen.width >= 768 ? 190 : 165;
+
+    var main = document.getElementsByClassName('main-wrapper')[0];
+    var start = main.scrollTop;
+    var documentHeight = Math.max(main.scrollHeight, main.offsetHeight, main.clientHeight, main.scrollHeight, main.offsetHeight);
+    var windowHeight = main.clientHeight;
+    var destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop - offset;
+    var destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+
+    function scroll() {
+      var now = window.performance.now ? performance.now() : new Date().getTime();
+      var time = Math.min(1, ((now - startTime) / duration));
+      var timeFunction = easeInOutQuart(time);
+      var scrollTo = Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start);
+
+      main.scroll(start, scrollTo);
+
+      if (main.scrollTop === destinationOffsetToScroll) return;
+
+      requestAnimationFrame(scroll);
+    }
+
+    scroll();
+  }
+
+  function scrollToTop() {
+    scrollIt(0, 500);
+  }
+
+  function scrollToTarget(target) {
+    scrollIt(
+      document.querySelector(target),
+      500
+    );
+  }
+
+  var quote = document.querySelector('#button-quote');
   var backToTop = document.querySelector('.back-to-top');
 
-  backToTop.addEventListener('click', function () {
-    document.querySelector(this.dataset.target).scrollTop = 0;
-  });
+  quote.addEventListener('click', function() { scrollToTarget('form') });
+  backToTop.addEventListener('click', scrollToTop);
 })();

@@ -47,7 +47,7 @@
 							<h2>Specialists on removals, storage and courier services for you and your business</h2>
 						</div>
 						<div class="splash-contact">
-							<a class="button" href="#contact">Get a quote now</a>
+							<a class="button" id="button-quote">Get a quote now</a>
 							<a class="button" href="tel:+447923953034">Call us on 07923953034</a>
 						</div>
 					</div>
@@ -158,46 +158,46 @@
 									<div class="form-contact">
 										<div class="form-unit">
 											<label for="name">Your name:</label>
-											<input type="text" name="name" required="required" placeholder="your name" />
+											<input id="name" type="text" name="name" required="required" placeholder="your name" />
 										</div>
 										<div class="form-unit">
 											<label for="email">Your email:</label>
-											<input type="email" name="email" required="required" placeholder="your email" />
+											<input id="email" type="email" name="email" required="required" placeholder="your email" />
 										</div>
 										<div class="form-unit">
 											<label for="tel">Your telephone:</label>
-											<input type="tel" name="tel" required="required" placeholder="telephone" />
+											<input id="tel" type="tel" name="tel" required="required" placeholder="telephone" />
 										</div>
 										<div class="form-removals">
 											<div class="form-unit">
 												<label for="postCodeFrom">Postcode from:</label>
-												<input type="text" name="postCodeFrom" required="required" placeholder="post code from" />
+												<input id="postCodeFrom" type="text" name="postCodeFrom" required="required" placeholder="post code from" />
 											</div>
 											<div class="form-unit">
 												<label for="postCodeTo">Postcode to:</label>
-												<input type="text" name="postCodeTo" required="required" placeholder="post code to" />
+												<input id="postCodeTo" type="text" name="postCodeTo" required="required" placeholder="post code to" />
 											</div>
 											<div class="form-unit">
 												<label for="nOfBedrooms">No of Bedrooms:</label>
-												<input type="number" name="nOfBedrooms" required="required" placeholder="number of bedrooms" />
+												<input id="nOfBedrooms" type="number" name="nOfBedrooms" required="required" placeholder="number of bedrooms" />
 											</div>
 											<div class="form-unit">
 												<label for="nOfItems">No of Items:</label>
-												<input type="number" name="nOfItems" required="required" placeholder="number of items" />
+												<input id="nOfItems" type="number" name="nOfItems" required="required" placeholder="number of items" />
 											</div>
 											<div class="form-unit">
 												<label for="dateFor">Date for:</label>
-												<input type="date" name="dateFor" required="required" placeholder="request date" />
+												<input id="dateFor" type="date" name="dateFor" required="required" placeholder="request date" />
 											</div>
 										</div>
 										<div class="form-storage">
 											<div class="form-unit">
 												<label for="dateFor">Start date:</label>
-												<input type="date" name="dateFor" required="required" placeholder="request date" />
+												<input id="dateFor" type="date" name="dateFor" required="required" placeholder="request date" />
 											</div>
 											<div class="form-unit">
 												<label for="typeOf">Type:</label>
-												<select value="type" name="typeOf">
+												<select id="typeOf" value="type" name="typeOf">
 													<option value="home">Home Storage</option>
 													<option value="document">Document Storage</option>
 													<option value="commercial">Commercial Storage</option>
@@ -205,7 +205,7 @@
 											</div>
 											<div class="form-unit">
 												<label for="sizeOf">Size:</label>
-												<select value="size" name="sizeOf">
+												<select id="sizeOf" value="size" name="sizeOf">
 													<option value="15">15 sq ft (walk in wardrobe)</option>
 													<option value="20">20 sq ft (2 telephone boxes)</option>
 													<option value="25">25 sq ft (small garden shed)</option>
@@ -223,25 +223,25 @@
 										<div class="form-courier">
 											<div class="form-unit">
 												<label for="postCodeFrom">Postcode from:</label>
-												<input type="text" name="postCodeFrom" required="required" placeholder="post code from" />
+												<input id="postCodeFrom" type="text" name="postCodeFrom" required="required" placeholder="post code from" />
 											</div>
 											<div class="form-unit">
 												<label for="postCodeTo">Postcode to:</label>
-												<input type="text" name="postCodeTo" required="required" placeholder="post code to" />
+												<input id="postCodeTo" type="text" name="postCodeTo" required="required" placeholder="post code to" />
 											</div>
 											<div class="form-unit">
 												<label for="nOfItems">No of Items:</label>
-												<input type="number" name="nOfItems" required="required" placeholder="number of items" />
+												<input id="nOfItems" type="number" name="nOfItems" required="required" placeholder="number of items" />
 											</div>
 											<div class="form-unit">
 												<label for="dateFor">Date for:</label>
-												<input type="date" name="dateFor" required="required" placeholder="request date" />
+												<input id="dateFor" type="date" name="dateFor" required="required" placeholder="request date" />
 											</div>
 										</div>
 									</div>
 									<div class="form-unit">
 										<label for="message">Your message:</label>
-										<textarea name="message" required="required" placeholder="your message"></textarea>
+										<textarea id="message" name="message" required="required" placeholder="your message"></textarea>
 									</div>
 								</div>
 								<input class="form-button button" type="submit" value="send" />
@@ -329,7 +329,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="main.js "></script>
+	<script src="main.js"></script>
 </body>
 
 </html>
