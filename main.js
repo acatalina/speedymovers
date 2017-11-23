@@ -7,7 +7,7 @@
 
   var menuOpen = false;
 
-  function toggleMenu() {
+  function toggleMenu(e) {
     menuOpen = !menuOpen;
 
     if (menuOpen) {
@@ -18,6 +18,7 @@
   }
 
   hamButton.addEventListener('click', toggleMenu);
+  hamButton.addEventListener('blur', toggleMenu);
 })();
 
 // Form interaction

@@ -264,6 +264,7 @@ p {
 	font-size: 1.5em;
 	font-weight: 900;
 	font-family: 'Oswald', sans-serif;
+	width: 100%;
 }
 
 /* Main */
@@ -558,11 +559,6 @@ span {display: block;}
 	margin-bottom: 2em;
 }
 
-/*
-.footer-elem >:first-child {
-	margin-right: 1em;
-}*/
-
 .footer-list {
 	font-size: .7em;
 	padding: 0;
@@ -610,6 +606,10 @@ span {display: block;}
 	.header-nav {
 		transition: .3s all ease-in-out;
 		transform: translateX(0);
+	}
+
+	.header-nav-item {
+		width: initial;
 	}
 
 	.ham-button {
