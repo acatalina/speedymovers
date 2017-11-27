@@ -22,7 +22,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	/* position: relative; */
 }
 
 .main-wrapper {
@@ -51,7 +50,10 @@ footer {
 	color: #f7f7f7;
 }
 
-ul {list-style: none;}
+ul {
+	list-style: none;
+	padding: 0;
+}
 
 button {
 	-webkit-appearance: none;
@@ -82,7 +84,7 @@ button {
 	font-weight: 900;
 	padding: 1em;
 	text-transform: uppercase;
-	width: 100%; 	/* remove width on media query */
+	width: 100%;
 }
 
 a, select, button {
@@ -152,10 +154,6 @@ a, select, button {
 .center {
 	text-align: center;
 }
-/*
-.right {
-	justify-content: center;
-} */
 
 .space {
 	margin: 0 1em;
@@ -180,7 +178,6 @@ h1, h2 {
 h1 {
 	font-size: 3.5em;
 	margin-bottom: .5em;
-	/*font-size: 5em;*/
 }
 
 h2 {
@@ -254,9 +251,9 @@ p {
 	align-items: center;
 }
 
-.ham-menu > * {
-	margin: .5em 0;
-}
+	.ham-menu a {
+		margin: .5em 0;
+	}
 
 .header-nav-item {
 	color: #545451;
@@ -306,7 +303,6 @@ p {
 
 .splash-contact a:first-child {
 	margin-bottom: 1em;
-	/* margin-right: 3em; on media query */
 }
 
 .list-description,
@@ -404,7 +400,7 @@ span {display: block;}
 
 .form-head select {
 	padding: 1em .5em;
-	width: 100%; /* remove on media */
+	width: 100%;
 }
 
 .form-contact {
@@ -421,7 +417,6 @@ span {display: block;}
 
 .form-unit label {
 	width: 100%;
-	/*width: 25%; on media */
 	padding: .5em 0;
 }
 
@@ -429,7 +424,6 @@ span {display: block;}
 .form-unit textarea,
 .form-unit select {
 	width: 100%;
-	/*width: 75%; on media */
 	padding: 1em .5em;
 }
 
@@ -440,7 +434,6 @@ span {display: block;}
 }
 
 .form-button {
-	/*float: right; on media */
 	background: #547cad;
 	margin-top: 1em;
 }
