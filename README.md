@@ -1,4 +1,4 @@
-![Image of Speedy Movers Logo](http://www.speedy-movers.co.uk/logo.svg)
+![Image of Speedy Movers Logo](http://www.speedy-movers.co.uk/imgs/logo.svg)
 ### Speedy Movers Official Website
 
 This repository represents the official website for the company Speedy Movers UK.
