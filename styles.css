@@ -87,6 +87,10 @@ button {
 	width: 100%;
 }
 
+.button:focus {
+	outline: none;
+}
+
 a, select, button {
 	text-decoration: none;
 	cursor: pointer;
@@ -245,7 +249,8 @@ p {
 	width: 60%;
 	text-align: center;
 	transform: translateX(100%);
-	transition: .2s all ease-in-out;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -267,7 +272,7 @@ p {
 /* Main */
 
 .splash {
-	background: url('imgs/speedybanner.png') no-repeat center;
+	background: url('imgs/speedybanner.svg') no-repeat center;
 	background-size: cover;
 	margin: 0;
 	height: 40em;
@@ -468,25 +473,31 @@ span {display: block;}
 
 .remove {
 	opacity: 0;
-	transition: .2s all ease-out;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
 	transform: translateY(-100%);
 }
 
 .whichspeedy {
+	-webkit-animation: fadein .2s ease-out;
 	animation: fadein .2s ease-out;
-	transition: .2s all ease-out;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
 }
 
 .form-removals {
 	transform: translateY(0);
-	transition: all .2s ease-in-out;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
 }
 
 .up {
+	-webkit-animation: goup .2s ease-in-out;
 	animation: goup .2s ease-in-out;
 }
 
 .down {
+	-webkit-animation: godown .2s ease-in-out;
 	animation: godown .2s ease-in-out;
 }
 
@@ -597,7 +608,8 @@ span {display: block;}
 	}
 
 	.header-nav {
-		transition: .3s all ease-in-out;
+		-webkit-transition: all 300ms ease-in-out;
+		transition: all 300ms ease-in-out;
 		transform: translateX(0);
 	}
 
@@ -606,7 +618,8 @@ span {display: block;}
 	}
 
 	.ham-button {
-		transition: .3s all ease-in-out;
+		-webkit-transition: all 300ms ease-in-out;
+		transition: all 300ms ease-in-out;
 		transform: translateX(500%)
 	}
 
@@ -622,12 +635,18 @@ span {display: block;}
 		display: inline-block;
 		width: 35%;
 		margin: 0 1em;
+		-webkit-transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		transition: all 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	}
 
-	.footer-list {
-		font-size: 1em;
-	}
+	.button:hover { transform: scale(1.05); }
+
+	.footer-list { font-size: 1em; }
 
 	.review-card p,
 	.review-card span { font-size: 1.25em; }
+}
+
+@media (min-width: 1400px) {
+	.splash { height: 60em;	}
 }
