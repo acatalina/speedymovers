@@ -1,1 +1,6 @@
-couriers.speedy-movers.co.uk /couriers.html
+https://couriers.speedy-movers.co.uk https://www.speedy-movers.co.uk/couriers.html 301!
+https://storage.speedy-movers.co.uk https://www.speedy-movers.co.uk/storage.html 301!
+https://removals.speedy-movers.co.uk https://www.speedy-movers.co.uk/removals.html 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://reverent-shockley-7c57b4.netlify.com/* https://www.speedy-movers.co.uk/:splat 301!
