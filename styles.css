@@ -179,7 +179,8 @@ h1, h2 {
 	font-family: 'Oswald', sans-serif;
 }
 
-h1 {
+h1,
+.h1 {
 	font-size: 3.5em;
 	margin-bottom: .5em;
 }
